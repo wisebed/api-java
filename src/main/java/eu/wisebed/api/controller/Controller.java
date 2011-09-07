@@ -60,7 +60,8 @@ public interface Controller {
 	 * <p/>
 	 * <b>Rationale for changes:</b><br/>
 	 * <b>1.0:</b> Initial appearance as deliverOutputFromSensorNode()<br/>
-	 * <b>2.0:</b> Re-uses the message data type to convey messages from the testbed service to the Controller Service
+	 * <b>2.0:</b> Re-uses the message data type to convey messages from the testbed service to the Controller
+	 * Service<br/>
 	 * <b>2.2:</b> {@link Message} type changed to contain <i>only</i> binary data instead of text or binary data as the
 	 * backend should not interpret (i.e. assume framing or encoding) of sensor node data
 	 *
