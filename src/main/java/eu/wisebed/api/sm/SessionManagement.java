@@ -1,6 +1,9 @@
 package eu.wisebed.api.sm;
 
 import eu.wisebed.api.common.KeyValuePair;
+import eu.wisebed.api.controller.Controller;
+import eu.wisebed.api.controller.RequestStatus;
+import eu.wisebed.api.controller.Status;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -39,26 +42,23 @@ public interface SessionManagement {
 	 * Returns the status (alive/dead) of a set of nodes.
 	 * <p/>
 	 * Upon successful invocation, the method returns a request identifier to match the asynchronous response(s). Any
-	 * implementation must asynchronously send one or more {@link eu.wisebed.api.controller.RequestStatus} message(s) to
-	 * the {@link eu.wisebed.api.controller.Controller} service.
+	 * implementation must asynchronously send one or more {@link RequestStatus} message(s) to the {@link Controller}
+	 * service.
 	 * <p/>
-	 * Each {@link eu.wisebed.api.controller.RequestStatus} message contains a list of nodes and their {@link
-	 * eu.wisebed.api.controller.Status}. The {@link eu.wisebed.api.controller.Status#getValue()} method returns the
-	 * integer value of 1 if the node is alive, an integer value of 0 if it is presumed dead and an integer value of -1 if
-	 * the node URN was not known to the testbed, where a node is deemed to be alive if it can be flashed with a new
-	 * image.
-	 * This list of returned values may be expanded in future as necessary. This operation is completed when all nodes'
-	 * status have been reported. The method {@link eu.wisebed.api.controller.Status#getMsg()} may return a human readable
-	 * description about the operation.
+	 * Each {@link RequestStatus} message contains a list of nodes and their {@link Status}. The
+	 * {@link Status#getValue()} method returns the integer value of 1 if the node is alive, an integer value of 0 if it
+	 * is presumed dead and an integer value of -1 if the node URN was not known to the testbed, where a node is deemed
+	 * to be alive if it can be flashed with a new image. This list of returned values may be expanded in future as
+	 * necessary. This operation is completed when all nodes status have been reported. The method
+	 * {@link Status#getMsg()} may return a human readable description about the operation.
 	 * <p/>
 	 * Before any action is executed, this operation will validate all node URNs in {@code nodes} and if a node URN is
 	 * invalid the method will throw an exception without executing the command for any of the nodes.
 	 * <p/>
-	 * <b>Note:</b> The implementation must ensure that this function does not interfere with running experiments. It must
-	 * either check node liveliness without querying any node-resident software; or else if a liveliness check does
-	 * require
-	 * node-resident software communication you must first check if an experiment is in progress on that node and if so
-	 * either return an error or else return a cached liveliness value.
+	 * <b>Note:</b> The implementation must ensure that this function does not interfere with running experiments. It
+	 * must either check node liveliness without querying any node-resident software; or else if a liveliness check does
+	 * require node-resident software communication you must first check if an experiment is in progress on that node
+	 * and if so either return an error or else return a cached liveliness value.
 	 * <p/>
 	 * <b>Rationale for changes:</b><br/>
 	 * <b>2.3:</b> Added to the {@link SessionManagement} API (in addition to the {@link eu.wisebed.api.wsn.WSN} API) to
@@ -67,10 +67,10 @@ public interface SessionManagement {
 	 * @param nodes
 	 * 		a set of node URNs
 	 * @param controllerEndpointUrl
-	 * 		Web Service endpoint URL of the {@link eu.wisebed.api.controller.Controller} to which
+	 * 		Web Service endpoint URL of the {@link Controller} to which
 	 * 		the asynchronous response(s) will be delivered
 	 *
-	 * @return returns java.lang.String request identifier to match the asynchronous response(s)
+	 * @return a request ID for asynchronous response(s) to the {@link Controller}
 	 *
 	 * @since 2.3
 	 */
@@ -118,8 +118,8 @@ public interface SessionManagement {
 	;
 
 	/**
-	 * Returns the "configuration" relating to this server, including the Web service endpoints of other relevant services
-	 * associated with this {@link SessionManagement} endpoint.
+	 * Returns the "configuration" relating to this server, including the Web service endpoints of other relevant
+	 * services associated with this {@link SessionManagement} endpoint.
 	 * <p/>
 	 * <b>Rationale for changes:</b><br/>
 	 * <b>2.3:</b> Allows client applications to learn all relevant endpoint URLs and additional
@@ -155,13 +155,12 @@ public interface SessionManagement {
 	 * Returns the endpoint URL of the {@link eu.wisebed.api.wsn.WSN} API associated with the given {@code
 	 * secretReservationKey}.
 	 * <p/>
-	 * If the implementation is a federator this method may return a fault if one of the federated {@link
-	 * SessionManagement} endpoints is unreachable or returns a fault. Federator implementations must not call the {@link
-	 * SessionManagement#free(java.util.List)} method if this happens.
+	 * If the implementation is a federator this method may return a fault if one of the federated
+	 * {@link SessionManagement} endpoints is unreachable or returns a fault. Federator implementations must not call
+	 * the {@link SessionManagement#free(java.util.List)} method if this happens.
 	 * <p/>
-	 * If this method is called repeatedly with different {@link eu.wisebed.api.controller.Controller} endpoint URLs these
-	 * URLs will be added to a set of {@link eu.wisebed.api.controller.Controller} endpoints of which all will be treated
-	 * as equals.
+	 * If this method is called repeatedly with different {@link Controller} endpoint URLs these URLs will be added to a
+	 * set of {@link Controller} endpoints of which all will be treated as equals.
 	 * <p/>
 	 * <b>Rationale for changes:</b><br/>
 	 * <b>2.0:</b> initial appearance as setPortalEndpoint()<br/>
@@ -172,7 +171,7 @@ public interface SessionManagement {
 	 * 		the reservation was made, used here as credentials. For a privately owned network
 	 * 		without secret reservation key, this parameter would be an empty string.
 	 * @param controller
-	 * 		The endpoint URL of the {@link eu.wisebed.api.controller.Controller} service. This is
+	 * 		The endpoint URL of the {@link Controller} service. This is
 	 * 		typically the "owner" of the experiment. All asynchronous replies to {@link
 	 * 		eu.wisebed.api.wsn.WSN} API calls are being sent to this endpoint URL.
 	 *

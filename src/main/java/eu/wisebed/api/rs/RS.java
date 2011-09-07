@@ -181,12 +181,12 @@ public interface RS {
 	 * eu.wisebed.api.snaa.SNAA#isAuthorized(List, Action)} with these keys and the string "reserve" for the {@code
 	 * action} parameter to determine whether a user is authorized to perform this reservation.
 	 * <p/>
-	 * The second parameter contains a list of node URNs that are to be reserved from {@link
-	 * eu.wisebed.api.rs.ConfidentialReservationData#getFrom()} until
-	 * {@link eu.wisebed.api.rs.ConfidentialReservationData#getTo()} (inclusive). The
-	 * parameter {@link eu.wisebed.api.rs.ConfidentialReservationData#getUserData()} can include arbitrary (public)
-	 * information about the reservation. This could be used to store additional information about this reservation used
-	 * by the client to the RS.
+	 * {@code reservation} contains a list of node URNs that are to be reserved from
+	 * {@link eu.wisebed.api.rs.ConfidentialReservationData#getFrom()} until
+	 * {@link eu.wisebed.api.rs.ConfidentialReservationData#getTo()} (inclusive). The parameter
+	 * {@link eu.wisebed.api.rs.ConfidentialReservationData#getUserData()} can include arbitrary (public) information
+	 * about the reservation. This could be used to store additional information about this reservation used by the
+	 * client to the RS.
 	 * <p/>
 	 * In addition, the RS must check whether the reservation can be made, i.e. if all the requested nodes are available
 	 * for the requested time interval.
