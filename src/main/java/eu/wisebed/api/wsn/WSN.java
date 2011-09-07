@@ -294,7 +294,7 @@ public interface WSN {
 	 *     "urn:wisebed:node:uzltestbed:node678"
 	 * }
 	 *
-	 * Program pX = new Program(...), py = new Program(...);
+	 * Program pX = new Program(...), pY = new Program(...);
 	 *
 	 * Program[] programs = new Program[] {pX, pY};
 	 *
@@ -517,10 +517,10 @@ public interface WSN {
 	 * dynamic component-based OS.
 	 * <p/>
 	 * <b>Rationale for changes:</b><br/>
-	 * <b>1.0:</b> Initial appearance as runCommand()
+	 * <b>1.0:</b> Initial appearance as runCommand()<br/>
 	 * <b>2.0:</b> Operates asynchronously. One message can be sent to multiple nodes. Messages are no longer restricted
 	 * to being text-based but may also carry binary data instead. The message data type comprises payload and metadata
-	 * of a message (time, origin, etc.).
+	 * of a message (time, origin, etc.).<br/>
 	 * <b>2.2:</b> {@link Message} type changed to contain <i>only</i> binary data instead of text or binary data as the
 	 * backend should not interpret (i.e. assume framing or encoding) of sensor node data.
 	 *
