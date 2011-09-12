@@ -69,6 +69,7 @@ If you also want to work with SNAPSHOT dependencies, also add:
 
 Contact
 ======
-Any feedback will be greatly appreciated, at the GitHub project page
-(https://github.com/wisebed/api-java) or by contacting
-[danbim](mailto:bimschas@itm.uni-luebeck.de) or [pfisterer](mailto:pfisterer@itm.uni-luebeck.de).
+Any feedback will be greatly appreciated, at the
+[api-java GitHub project page](https://github.com/wisebed/api-java)
+or by contacting [danbim](mailto:bimschas@itm.uni-luebeck.de) or
+[pfisterer](mailto:pfisterer@itm.uni-luebeck.de).
