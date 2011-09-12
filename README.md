@@ -33,6 +33,7 @@ Add the following repository to your pom.xml:
 
 ```
 <repositories>
+	...
 	<repository>
 		<id>wisebed-maven-repository-releases</id>
 		<url>http://wisebed.eu/maven/releases/</url>
@@ -43,6 +44,7 @@ Add the following repository to your pom.xml:
 			<enabled>false</enabled>
 		</snapshots>
 	</repository>
+	...
 </repositories>
 ```
   
@@ -50,7 +52,8 @@ If you also want to work with SNAPSHOT dependencies, also add:
 
 ```
 <repositories>
-  <repository>
+	...
+	<repository>
 		<id>wisebed-maven-repository-snapshots</id>
 		<url>http://wisebed.eu/maven/snapshots/</url>
 		<releases>
@@ -60,6 +63,7 @@ If you also want to work with SNAPSHOT dependencies, also add:
 			<enabled>true</enabled>
 		</snapshots>
 	</repository>
+	...
 </repositories>
 ```
 
