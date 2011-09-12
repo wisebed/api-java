@@ -14,7 +14,7 @@ Before cloning this repository, be sure to enable automatic conversion
 of CRLF/LF on your machine using ```git config --global core.autocrlf input```. 
 For more information, please refer to [this article](http://help.github.com/dealing-with-lineendings/).
 
-Clone the repository using ```git clone git@github.com:wisebed/api-java.git```.
+Clone the repository using ```git clone git://github.com/wisebed/api-java.git```.
 To build, run ```mvn install```, this will build the program and place the 
 generated jar file in target/ and in your local Maven repository.
 
