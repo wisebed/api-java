@@ -43,59 +43,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetConfigurationResponse }
+     * Create an instance of {@link AreNodesAliveResponse }
      * 
      */
-    public GetConfigurationResponse createGetConfigurationResponse() {
-        return new GetConfigurationResponse();
-    }
-
-    /**
-     * Create an instance of {@link UnknownReservationIdException }
-     * 
-     */
-    public UnknownReservationIdException createUnknownReservationIdException() {
-        return new UnknownReservationIdException();
-    }
-
-    /**
-     * Create an instance of {@link SecretReservationKey }
-     * 
-     */
-    public SecretReservationKey createSecretReservationKey() {
-        return new SecretReservationKey();
-    }
-
-    /**
-     * Create an instance of {@link Free }
-     * 
-     */
-    public Free createFree() {
-        return new Free();
-    }
-
-    /**
-     * Create an instance of {@link GetInstance }
-     * 
-     */
-    public GetInstance createGetInstance() {
-        return new GetInstance();
-    }
-
-    /**
-     * Create an instance of {@link GetInstanceResponse }
-     * 
-     */
-    public GetInstanceResponse createGetInstanceResponse() {
-        return new GetInstanceResponse();
-    }
-
-    /**
-     * Create an instance of {@link AreNodesAlive }
-     * 
-     */
-    public AreNodesAlive createAreNodesAlive() {
-        return new AreNodesAlive();
+    public AreNodesAliveResponse createAreNodesAliveResponse() {
+        return new AreNodesAliveResponse();
     }
 
     /**
@@ -107,19 +59,35 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AreNodesAliveResponse }
+     * Create an instance of {@link AreNodesAlive }
      * 
      */
-    public AreNodesAliveResponse createAreNodesAliveResponse() {
-        return new AreNodesAliveResponse();
+    public AreNodesAlive createAreNodesAlive() {
+        return new AreNodesAlive();
     }
 
     /**
-     * Create an instance of {@link FreeResponse }
+     * Create an instance of {@link UnknownReservationIdException }
      * 
      */
-    public FreeResponse createFreeResponse() {
-        return new FreeResponse();
+    public UnknownReservationIdException createUnknownReservationIdException() {
+        return new UnknownReservationIdException();
+    }
+
+    /**
+     * Create an instance of {@link Free }
+     * 
+     */
+    public Free createFree() {
+        return new Free();
+    }
+
+    /**
+     * Create an instance of {@link GetConfigurationResponse }
+     * 
+     */
+    public GetConfigurationResponse createGetConfigurationResponse() {
+        return new GetConfigurationResponse();
     }
 
     /**
@@ -128,6 +96,30 @@ public class ObjectFactory {
      */
     public ExperimentNotRunningException createExperimentNotRunningException() {
         return new ExperimentNotRunningException();
+    }
+
+    /**
+     * Create an instance of {@link GetInstanceResponse }
+     * 
+     */
+    public GetInstanceResponse createGetInstanceResponse() {
+        return new GetInstanceResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetInstance }
+     * 
+     */
+    public GetInstance createGetInstance() {
+        return new GetInstance();
+    }
+
+    /**
+     * Create an instance of {@link FreeResponse }
+     * 
+     */
+    public FreeResponse createFreeResponse() {
+        return new FreeResponse();
     }
 
     /**
