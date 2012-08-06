@@ -10,8 +10,8 @@ import javax.xml.ws.WebFault;
  * Generated source version: 2.1
  * 
  */
-@WebFault(name = "ReservationConflictFault", targetNamespace = "urn:RSService")
-public class ReservervationConflictExceptionException
+@WebFault(name = "ReservationNotFoundFault", targetNamespace = "urn:RSService")
+public class ReservationNotFoundExceptionException
     extends Exception
 {
 
@@ -19,14 +19,14 @@ public class ReservervationConflictExceptionException
      * Java type that goes as soapenv:Fault detail element.
      * 
      */
-    private ReservationConflictException faultInfo;
+    private ReservationNotFoundException faultInfo;
 
     /**
      * 
      * @param message
      * @param faultInfo
      */
-    public ReservervationConflictExceptionException(String message, ReservationConflictException faultInfo) {
+    public ReservationNotFoundExceptionException(String message, ReservationNotFoundException faultInfo) {
         super(message);
         this.faultInfo = faultInfo;
     }
@@ -37,7 +37,7 @@ public class ReservervationConflictExceptionException
      * @param faultInfo
      * @param cause
      */
-    public ReservervationConflictExceptionException(String message, ReservationConflictException faultInfo, Throwable cause) {
+    public ReservationNotFoundExceptionException(String message, ReservationNotFoundException faultInfo, Throwable cause) {
         super(message, cause);
         this.faultInfo = faultInfo;
     }
@@ -45,9 +45,9 @@ public class ReservervationConflictExceptionException
     /**
      * 
      * @return
-     *     returns fault bean: eu.wisebed.api.rs.ReservationConflictException
+     *     returns fault bean: eu.wisebed.api.rs.ReservationNotFoundException
      */
-    public ReservationConflictException getFaultInfo() {
+    public ReservationNotFoundException getFaultInfo() {
         return faultInfo;
     }
 

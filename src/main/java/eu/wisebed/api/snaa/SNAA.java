@@ -32,8 +32,8 @@ public interface SNAA {
      * @param authenticationData
      * @return
      *     returns java.util.List<eu.wisebed.api.common.SecretAuthenticationKey>
-     * @throws AuthenticationExceptionException
      * @throws SNAAExceptionException
+     * @throws AuthenticationExceptionException
      */
     @WebMethod
     @WebResult(name = "secretAuthenticationKey", targetNamespace = "")

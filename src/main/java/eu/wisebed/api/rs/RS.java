@@ -22,8 +22,8 @@ import eu.wisebed.api.common.SecretReservationKey;
  */
 @WebService(name = "RS", targetNamespace = "urn:RSService")
 @XmlSeeAlso({
-    eu.wisebed.api.common.ObjectFactory.class,
-    eu.wisebed.api.rs.ObjectFactory.class
+    eu.wisebed.api.rs.ObjectFactory.class,
+    eu.wisebed.api.common.ObjectFactory.class
 })
 public interface RS {
 
@@ -73,8 +73,8 @@ public interface RS {
      * @param secretReservationKey
      * @return
      *     returns java.util.List<eu.wisebed.api.rs.ConfidentialReservationData>
+     * @throws ReservationNotFoundExceptionException
      * @throws RSExceptionException
-     * @throws ReservervationNotFoundExceptionException
      */
     @WebMethod
     @WebResult(name = "reservationData", targetNamespace = "")
@@ -83,14 +83,14 @@ public interface RS {
     public List<ConfidentialReservationData> getReservation(
         @WebParam(name = "secretReservationKey", targetNamespace = "")
         List<SecretReservationKey> secretReservationKey)
-        throws RSExceptionException, ReservervationNotFoundExceptionException
+        throws RSExceptionException, ReservationNotFoundExceptionException
     ;
 
     /**
      * 
      * @param secretReservationKey
+     * @throws ReservationNotFoundExceptionException
      * @throws RSExceptionException
-     * @throws ReservervationNotFoundExceptionException
      */
     @WebMethod
     @RequestWrapper(localName = "deleteReservation", targetNamespace = "urn:RSService", className = "eu.wisebed.api.rs.DeleteReservation")
@@ -98,7 +98,7 @@ public interface RS {
     public void deleteReservation(
         @WebParam(name = "secretReservationKey", targetNamespace = "")
         List<SecretReservationKey> secretReservationKey)
-        throws RSExceptionException, ReservervationNotFoundExceptionException
+        throws RSExceptionException, ReservationNotFoundExceptionException
     ;
 
     /**
@@ -109,7 +109,7 @@ public interface RS {
      *     returns java.util.List<eu.wisebed.api.common.SecretReservationKey>
      * @throws AuthorizationExceptionException
      * @throws RSExceptionException
-     * @throws ReservervationConflictExceptionException
+     * @throws ReservationConflictExceptionException
      */
     @WebMethod
     @WebResult(name = "secretReservationKey", targetNamespace = "")
@@ -120,7 +120,7 @@ public interface RS {
         List<SecretAuthenticationKey> authenticationData,
         @WebParam(name = "reservation", targetNamespace = "")
         ConfidentialReservationData reservation)
-        throws AuthorizationExceptionException, RSExceptionException, ReservervationConflictExceptionException
+        throws AuthorizationExceptionException, RSExceptionException, ReservationConflictExceptionException
     ;
 
 }

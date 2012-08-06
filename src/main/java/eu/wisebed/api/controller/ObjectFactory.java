@@ -38,22 +38,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ExperimentEnded }
-     * 
-     */
-    public ExperimentEnded createExperimentEnded() {
-        return new ExperimentEnded();
-    }
-
-    /**
-     * Create an instance of {@link ReceiveStatus }
-     * 
-     */
-    public ReceiveStatus createReceiveStatus() {
-        return new ReceiveStatus();
-    }
-
-    /**
      * Create an instance of {@link Status }
      * 
      */
@@ -70,11 +54,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Receive }
+     * Create an instance of {@link ReceiveStatus }
      * 
      */
-    public Receive createReceive() {
-        return new Receive();
+    public ReceiveStatus createReceiveStatus() {
+        return new ReceiveStatus();
     }
 
     /**
@@ -83,6 +67,22 @@ public class ObjectFactory {
      */
     public ReceiveNotification createReceiveNotification() {
         return new ReceiveNotification();
+    }
+
+    /**
+     * Create an instance of {@link ExperimentEnded }
+     * 
+     */
+    public ExperimentEnded createExperimentEnded() {
+        return new ExperimentEnded();
+    }
+
+    /**
+     * Create an instance of {@link Receive }
+     * 
+     */
+    public Receive createReceive() {
+        return new Receive();
     }
 
     /**
