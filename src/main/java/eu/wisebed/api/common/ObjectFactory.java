@@ -24,9 +24,9 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _GetNetworkResponse_QNAME = new QName("urn:CommonTypes", "getNetworkResponse");
     private final static QName _Message_QNAME = new QName("urn:CommonTypes", "message");
     private final static QName _GetNetwork_QNAME = new QName("urn:CommonTypes", "getNetwork");
+    private final static QName _GetNetworkResponse_QNAME = new QName("urn:CommonTypes", "getNetworkResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: eu.wisebed.api.common
@@ -36,11 +36,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link KeyValuePair }
+     * Create an instance of {@link SecretAuthenticationKey }
      * 
      */
-    public KeyValuePair createKeyValuePair() {
-        return new KeyValuePair();
+    public SecretAuthenticationKey createSecretAuthenticationKey() {
+        return new SecretAuthenticationKey();
     }
 
     /**
@@ -52,11 +52,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Message }
+     * Create an instance of {@link UsernameUrnPrefixPair }
      * 
      */
-    public Message createMessage() {
-        return new Message();
+    public UsernameUrnPrefixPair createUsernameUrnPrefixPair() {
+        return new UsernameUrnPrefixPair();
+    }
+
+    /**
+     * Create an instance of {@link KeyValuePair }
+     * 
+     */
+    public KeyValuePair createKeyValuePair() {
+        return new KeyValuePair();
     }
 
     /**
@@ -68,12 +76,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetNetworkResponse }{@code >}}
+     * Create an instance of {@link SecretReservationKey }
      * 
      */
-    @XmlElementDecl(namespace = "urn:CommonTypes", name = "getNetworkResponse")
-    public JAXBElement<GetNetworkResponse> createGetNetworkResponse(GetNetworkResponse value) {
-        return new JAXBElement<GetNetworkResponse>(_GetNetworkResponse_QNAME, GetNetworkResponse.class, null, value);
+    public SecretReservationKey createSecretReservationKey() {
+        return new SecretReservationKey();
+    }
+
+    /**
+     * Create an instance of {@link Message }
+     * 
+     */
+    public Message createMessage() {
+        return new Message();
     }
 
     /**
@@ -92,6 +107,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "urn:CommonTypes", name = "getNetwork")
     public JAXBElement<GetNetwork> createGetNetwork(GetNetwork value) {
         return new JAXBElement<GetNetwork>(_GetNetwork_QNAME, GetNetwork.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetNetworkResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "urn:CommonTypes", name = "getNetworkResponse")
+    public JAXBElement<GetNetworkResponse> createGetNetworkResponse(GetNetworkResponse value) {
+        return new JAXBElement<GetNetworkResponse>(_GetNetworkResponse_QNAME, GetNetworkResponse.class, null, value);
     }
 
 }

@@ -39,11 +39,51 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Action }
+     * Create an instance of {@link AuthenticationTriple }
      * 
      */
-    public Action createAction() {
-        return new Action();
+    public AuthenticationTriple createAuthenticationTriple() {
+        return new AuthenticationTriple();
+    }
+
+    /**
+     * Create an instance of {@link AuthenticateResponse }
+     * 
+     */
+    public AuthenticateResponse createAuthenticateResponse() {
+        return new AuthenticateResponse();
+    }
+
+    /**
+     * Create an instance of {@link Authenticate }
+     * 
+     */
+    public Authenticate createAuthenticate() {
+        return new Authenticate();
+    }
+
+    /**
+     * Create an instance of {@link AuthorizationResponse }
+     * 
+     */
+    public AuthorizationResponse createAuthorizationResponse() {
+        return new AuthorizationResponse();
+    }
+
+    /**
+     * Create an instance of {@link IsAuthorizedResponse }
+     * 
+     */
+    public IsAuthorizedResponse createIsAuthorizedResponse() {
+        return new IsAuthorizedResponse();
+    }
+
+    /**
+     * Create an instance of {@link IsAuthorized }
+     * 
+     */
+    public IsAuthorized createIsAuthorized() {
+        return new IsAuthorized();
     }
 
     /**
@@ -60,54 +100,6 @@ public class ObjectFactory {
      */
     public AuthenticationException createAuthenticationException() {
         return new AuthenticationException();
-    }
-
-    /**
-     * Create an instance of {@link Authenticate }
-     * 
-     */
-    public Authenticate createAuthenticate() {
-        return new Authenticate();
-    }
-
-    /**
-     * Create an instance of {@link SecretAuthenticationKey }
-     * 
-     */
-    public SecretAuthenticationKey createSecretAuthenticationKey() {
-        return new SecretAuthenticationKey();
-    }
-
-    /**
-     * Create an instance of {@link IsAuthorized }
-     * 
-     */
-    public IsAuthorized createIsAuthorized() {
-        return new IsAuthorized();
-    }
-
-    /**
-     * Create an instance of {@link AuthenticateResponse }
-     * 
-     */
-    public AuthenticateResponse createAuthenticateResponse() {
-        return new AuthenticateResponse();
-    }
-
-    /**
-     * Create an instance of {@link IsAuthorizedResponse }
-     * 
-     */
-    public IsAuthorizedResponse createIsAuthorizedResponse() {
-        return new IsAuthorizedResponse();
-    }
-
-    /**
-     * Create an instance of {@link AuthenticationTriple }
-     * 
-     */
-    public AuthenticationTriple createAuthenticationTriple() {
-        return new AuthenticationTriple();
     }
 
     /**
