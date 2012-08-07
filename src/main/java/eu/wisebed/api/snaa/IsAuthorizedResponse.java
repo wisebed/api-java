@@ -3,6 +3,7 @@ package eu.wisebed.api.snaa;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -16,7 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="authorization" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         &lt;element name="resp" type="{http://testbed.wisebed.eu/api/snaa/v1/}AuthorizationResponse"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -27,26 +28,35 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "isAuthorizedResponse", propOrder = {
-    "authorization"
+    "resp"
 })
 public class IsAuthorizedResponse {
 
-    protected boolean authorization;
+    @XmlElement(required = true)
+    protected AuthorizationResponse resp;
 
     /**
-     * Gets the value of the authorization property.
+     * Gets the value of the resp property.
      * 
+     * @return
+     *     possible object is
+     *     {@link AuthorizationResponse }
+     *     
      */
-    public boolean isAuthorization() {
-        return authorization;
+    public AuthorizationResponse getResp() {
+        return resp;
     }
 
     /**
-     * Sets the value of the authorization property.
+     * Sets the value of the resp property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link AuthorizationResponse }
+     *     
      */
-    public void setAuthorization(boolean value) {
-        this.authorization = value;
+    public void setResp(AuthorizationResponse value) {
+        this.resp = value;
     }
 
 }
