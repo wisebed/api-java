@@ -7,7 +7,6 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import eu.wisebed.api.common.SecretAuthenticationKey;
 
 
 /**
@@ -20,7 +19,7 @@ import eu.wisebed.api.common.SecretAuthenticationKey;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="authenticationData" type="{urn:CommonTypes}secretAuthenticationKey" maxOccurs="unbounded"/>
+ *         &lt;element name="authenticationData" type="{urn:RSService}secretAuthenticationKey" maxOccurs="unbounded"/>
  *         &lt;element name="reservation" type="{urn:RSService}confidentialReservationData"/>
  *       &lt;/sequence>
  *     &lt;/restriction>

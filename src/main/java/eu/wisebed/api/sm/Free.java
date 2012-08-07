@@ -3,11 +3,11 @@ package eu.wisebed.api.sm;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import eu.wisebed.api.common.SecretReservationKey;
 
 
 /**
@@ -20,7 +20,7 @@ import eu.wisebed.api.common.SecretReservationKey;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="secretReservationKey" type="{urn:CommonTypes}secretReservationKey" maxOccurs="unbounded"/>
+ *         &lt;element name="secretReservationKey" type="{urn:SessionManagementService}secretReservationKey" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>

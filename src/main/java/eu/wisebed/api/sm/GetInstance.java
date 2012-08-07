@@ -3,11 +3,11 @@ package eu.wisebed.api.sm;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import eu.wisebed.api.common.SecretReservationKey;
 
 
 /**
@@ -20,7 +20,8 @@ import eu.wisebed.api.common.SecretReservationKey;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="secretReservationKey" type="{urn:CommonTypes}secretReservationKey" maxOccurs="unbounded"/>
+ *         &lt;element name="secretReservationKey" type="{urn:SessionManagementService}secretReservationKey" maxOccurs="unbounded"/>
+ *         &lt;element name="controller" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -31,12 +32,15 @@ import eu.wisebed.api.common.SecretReservationKey;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "getInstance", propOrder = {
-    "secretReservationKey"
+    "secretReservationKey",
+    "controller"
 })
 public class GetInstance {
 
     @XmlElement(required = true)
     protected List<SecretReservationKey> secretReservationKey;
+    @XmlElement(required = true)
+    protected String controller;
 
     /**
      * Gets the value of the secretReservationKey property.
@@ -65,6 +69,30 @@ public class GetInstance {
             secretReservationKey = new ArrayList<SecretReservationKey>();
         }
         return this.secretReservationKey;
+    }
+
+    /**
+     * Gets the value of the controller property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getController() {
+        return controller;
+    }
+
+    /**
+     * Sets the value of the controller property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setController(String value) {
+        this.controller = value;
     }
 
 }

@@ -1,5 +1,5 @@
 
-package eu.wisebed.api.common;
+package eu.wisebed.api.sm;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

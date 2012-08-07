@@ -7,12 +7,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for ReservationNotFoundException complex type.
+ * <p>Java class for ReservervationNotFoundException complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="ReservationNotFoundException">
+ * &lt;complexType name="ReservervationNotFoundException">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -26,10 +26,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ReservationNotFoundException", propOrder = {
+@XmlType(name = "ReservervationNotFoundException", propOrder = {
     "message"
 })
-public class ReservationNotFoundException {
+public class ReservervationNotFoundException {
 
     protected String message;
 

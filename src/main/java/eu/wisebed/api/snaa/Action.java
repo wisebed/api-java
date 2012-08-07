@@ -1,66 +1,98 @@
 
 package eu.wisebed.api.snaa;
 
-import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for Action.
+ * <p>Java class for action complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
+ * 
  * <pre>
- * &lt;simpleType name="Action">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="RS_DELETE_RESERVATION"/>
- *     &lt;enumeration value="RS_GET_RESERVATIONS"/>
- *     &lt;enumeration value="RS_MAKE_RESERVATION"/>
- *     &lt;enumeration value="SM_ARE_NODES_ALIVE"/>
- *     &lt;enumeration value="SM_FREE"/>
- *     &lt;enumeration value="WSN_ARE_NODES_ALIVE"/>
- *     &lt;enumeration value="WSN_DESTROY_VIRTUAL_LINK"/>
- *     &lt;enumeration value="WSN_DISABLE_NODE"/>
- *     &lt;enumeration value="WSN_DISABLE_PHYSICAL_LINK"/>
- *     &lt;enumeration value="WSN_ENABLE_NODE"/>
- *     &lt;enumeration value="WSN_ENABLE_PHYSICAL_LINK"/>
- *     &lt;enumeration value="WSN_FLASH_PROGRAMS"/>
- *     &lt;enumeration value="WSN_RESET_NODES"/>
- *     &lt;enumeration value="WSN_SEND"/>
- *     &lt;enumeration value="WSN_SET_CHANNEL_PIPELINE"/>
- *     &lt;enumeration value="WSN_SET_VIRTUAL_LINK"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;complexType name="action">
+ *   &lt;complexContent>
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;sequence>
+ *         &lt;element name="action" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *       &lt;/sequence>
+ *     &lt;/restriction>
+ *   &lt;/complexContent>
+ * &lt;/complexType>
  * </pre>
  * 
+ * 
  */
-@XmlType(name = "Action")
-@XmlEnum
-public enum Action {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "action", propOrder = {
+    "action"
+})
+public class Action {
 
-    RS_DELETE_RESERVATION,
-    RS_GET_RESERVATIONS,
-    RS_MAKE_RESERVATION,
-    SM_ARE_NODES_ALIVE,
-    SM_FREE,
-    WSN_ARE_NODES_ALIVE,
-    WSN_DESTROY_VIRTUAL_LINK,
-    WSN_DISABLE_NODE,
-    WSN_DISABLE_PHYSICAL_LINK,
-    WSN_ENABLE_NODE,
-    WSN_ENABLE_PHYSICAL_LINK,
-    WSN_FLASH_PROGRAMS,
-    WSN_RESET_NODES,
-    WSN_SEND,
-    WSN_SET_CHANNEL_PIPELINE,
-    WSN_SET_VIRTUAL_LINK;
+    @XmlElement(required = true)
+    protected String action;
 
-    public String value() {
-        return name();
+	public Action() {
+	}
+
+	public Action(final String action) {
+		this.action = action;
+	}
+
+	/**
+     * Gets the value of the action property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getAction() {
+        return action;
     }
 
-    public static Action fromValue(String v) {
-        return valueOf(v);
+    /**
+     * Sets the value of the action property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setAction(String value) {
+        this.action = value;
     }
 
+	@Override
+	public boolean equals(final Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
+
+		final Action action1 = (Action) o;
+
+		if (!action.equals(action1.action)) {
+			return false;
+		}
+
+		return true;
+	}
+
+	@Override
+	public int hashCode() {
+		return action.hashCode();
+	}
+
+	@Override
+	public String toString() {
+		return "Action{" +
+				"action='" + action + '\'' +
+				'}';
+	}
 }

@@ -1,6 +1,5 @@
 #!/bin/bash
 wsimport \
- -b src/main/resources/CommonTypes.xjb \
  -b src/main/resources/SNAATypes.xjb \
  -b src/main/resources/SNAAService.xjb \
  -s src/main/java/ \

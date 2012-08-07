@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<xs:schema targetNamespace="urn:CommonTypes"
-		   xmlns:tns="urn:CommonTypes"
-		   xmlns:xs="http://www.w3.org/2001/XMLSchema"
-		   version="1.0">
+<xs:schema version="1.0" targetNamespace="urn:CommonTypes"
+		   xmlns:tns="urn:CommonTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
 	<xs:complexType name="getNetwork">
 		<xs:sequence />
@@ -28,21 +26,6 @@
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:complexType name="secretAuthenticationKey">
-		<xs:sequence>
-			<xs:element name="username" type="xs:string"/>
-			<xs:element name="secretAuthenticationKey" type="xs:string"/>
-			<xs:element name="urnPrefix" type="xs:string"/>
-		</xs:sequence>
-	</xs:complexType>
-
-	<xs:complexType name="secretReservationKey">
-		<xs:sequence>
-			<xs:element name="secretReservationKey" type="xs:string"/>
-			<xs:element name="urnPrefix" type="xs:string"/>
-		</xs:sequence>
-	</xs:complexType>
-
 	<xs:simpleType name="requestId">
 		<xs:restriction base="xs:string" />
 	</xs:simpleType>
@@ -50,12 +33,5 @@
 	<xs:element name="getNetwork" type="tns:getNetwork" />
 	<xs:element name="getNetworkResponse" type="tns:getNetworkResponse" />
 	<xs:element name="message" type="tns:message" />
-
-	<xs:complexType name="UsernameUrnPrefixPair">
-		<xs:sequence>
-			<xs:element name="username" type= "xs:string" />
-			<xs:element name="urnPrefix" type= "xs:string" />
-		</xs:sequence>
-	</xs:complexType>
 
 </xs:schema>
