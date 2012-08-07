@@ -1,5 +1,6 @@
 #!/bin/bash
 wsimport \
+ -b src/main/resources/CommonTypes.xjb \
  -b src/main/resources/RSService.xjb \
  -b src/main/resources/RSTypes.xjb \
  -s src/main/java/ \

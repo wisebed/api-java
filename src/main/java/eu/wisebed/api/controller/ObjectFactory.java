@@ -38,6 +38,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Status }
+     * 
+     */
+    public Status createStatus() {
+        return new Status();
+    }
+
+    /**
+     * Create an instance of {@link RequestStatus }
+     * 
+     */
+    public RequestStatus createRequestStatus() {
+        return new RequestStatus();
+    }
+
+    /**
+     * Create an instance of {@link ReceiveStatus }
+     * 
+     */
+    public ReceiveStatus createReceiveStatus() {
+        return new ReceiveStatus();
+    }
+
+    /**
      * Create an instance of {@link ReceiveNotification }
      * 
      */
@@ -59,30 +83,6 @@ public class ObjectFactory {
      */
     public Receive createReceive() {
         return new Receive();
-    }
-
-    /**
-     * Create an instance of {@link RequestStatus }
-     * 
-     */
-    public RequestStatus createRequestStatus() {
-        return new RequestStatus();
-    }
-
-    /**
-     * Create an instance of {@link Status }
-     * 
-     */
-    public Status createStatus() {
-        return new Status();
-    }
-
-    /**
-     * Create an instance of {@link ReceiveStatus }
-     * 
-     */
-    public ReceiveStatus createReceiveStatus() {
-        return new ReceiveStatus();
     }
 
     /**

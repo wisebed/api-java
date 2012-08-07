@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:RSService"
-			 xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/"
-			 targetNamespace="urn:RSService" name="RSService">
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:RSService" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:RSService" name="RSService">
+
 	<types>
 		<xsd:schema>
 			<xsd:import namespace="urn:RSService" schemaLocation="RSTypes.xsd"/>
@@ -61,32 +60,29 @@
 			<input message="tns:getReservation"/>
 			<output message="tns:getReservationResponse"/>
 			<fault message="tns:RSException_Exception" name="RSException_Exception"/>
-			<fault message="tns:ReservationNotFoundException_Exception"
-				   name="ReservationNotFoundException_Exception"/>
+			<fault message="tns:ReservationNotFoundException_Exception" name="ReservationNotFoundException_Exception"/>
 		</operation>
 		<operation name="deleteReservation">
 			<input message="tns:deleteReservation"/>
 			<output message="tns:deleteReservationResponse"/>
 			<fault message="tns:RSException_Exception" name="RSException_Exception"/>
-			<fault message="tns:ReservationNotFoundException_Exception"
-				   name="ReservationNotFoundException_Exception"/>
+			<fault message="tns:ReservationNotFoundException_Exception" name="ReservationNotFoundException_Exception"/>
 		</operation>
 		<operation name="makeReservation">
 			<input message="tns:makeReservation"/>
 			<output message="tns:makeReservationResponse"/>
 			<fault message="tns:AuthorizationException_Exception" name="AuthorizationException_Exception"/>
 			<fault message="tns:RSException_Exception" name="RSException_Exception"/>
-			<fault message="tns:ReservationConflictException_Exception"
-				   name="ReservationConflictException_Exception"/>
+			<fault message="tns:ReservationConflictException_Exception" name="ReservationConflictException_Exception"/>
 		</operation>
-
+		
 		<operation name="getConfidentialReservations">
 			<input message="tns:getConfidentialReservations"/>
 			<output message="tns:getConfidentialReservationsResponse"/>
 			<fault message="tns:RSException_Exception" name="RSException_Exception"/>
 		</operation>
-
-
+		
+		
 	</portType>
 	<binding name="RSPortBinding" type="tns:RS">
 		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
@@ -102,7 +98,7 @@
 				<soap:fault name="RSException_Exception" use="literal"/>
 			</fault>
 		</operation>
-
+	
 		<operation name="getConfidentialReservations">
 			<soap:operation soapAction=""/>
 			<input>
@@ -115,8 +111,8 @@
 				<soap:fault name="RSException_Exception" use="literal"/>
 			</fault>
 		</operation>
-
-
+		
+		
 		<operation name="getReservation">
 			<soap:operation soapAction=""/>
 			<input>
