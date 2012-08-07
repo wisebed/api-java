@@ -7,12 +7,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for ReservervationConflictException complex type.
+ * <p>Java class for ReservationConflictException complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="ReservervationConflictException">
+ * &lt;complexType name="ReservationConflictException">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -26,10 +26,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ReservervationConflictException", propOrder = {
+@XmlType(name = "ReservationConflictException", propOrder = {
     "message"
 })
-public class ReservervationConflictException {
+public class ReservationConflictException {
 
     protected String message;
 
