@@ -21,8 +21,8 @@ import eu.wisebed.api.common.UsernameUrnPrefixPair;
  */
 @WebService(name = "SNAA", targetNamespace = "http://testbed.wisebed.eu/api/snaa/v1/")
 @XmlSeeAlso({
-    eu.wisebed.api.snaa.ObjectFactory.class,
-    eu.wisebed.api.common.ObjectFactory.class
+    eu.wisebed.api.common.ObjectFactory.class,
+    eu.wisebed.api.snaa.ObjectFactory.class
 })
 public interface SNAA {
 

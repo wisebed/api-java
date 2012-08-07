@@ -47,11 +47,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetReservationResponse }
+     * Create an instance of {@link GetReservation }
      * 
      */
-    public GetReservationResponse createGetReservationResponse() {
-        return new GetReservationResponse();
+    public GetReservation createGetReservation() {
+        return new GetReservation();
     }
 
     /**
@@ -63,59 +63,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RSException }
-     * 
-     */
-    public RSException createRSException() {
-        return new RSException();
-    }
-
-    /**
      * Create an instance of {@link MakeReservation }
      * 
      */
     public MakeReservation createMakeReservation() {
         return new MakeReservation();
-    }
-
-    /**
-     * Create an instance of {@link ReservationConflictException }
-     * 
-     */
-    public ReservationConflictException createReservationConflictException() {
-        return new ReservationConflictException();
-    }
-
-    /**
-     * Create an instance of {@link ConfidentialReservationData }
-     * 
-     */
-    public ConfidentialReservationData createConfidentialReservationData() {
-        return new ConfidentialReservationData();
-    }
-
-    /**
-     * Create an instance of {@link MakeReservationResponse }
-     * 
-     */
-    public MakeReservationResponse createMakeReservationResponse() {
-        return new MakeReservationResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetReservation }
-     * 
-     */
-    public GetReservation createGetReservation() {
-        return new GetReservation();
-    }
-
-    /**
-     * Create an instance of {@link GetConfidentialReservations }
-     * 
-     */
-    public GetConfidentialReservations createGetConfidentialReservations() {
-        return new GetConfidentialReservations();
     }
 
     /**
@@ -127,11 +79,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link DeleteReservationResponse }
+     * Create an instance of {@link RSException }
      * 
      */
-    public DeleteReservationResponse createDeleteReservationResponse() {
-        return new DeleteReservationResponse();
+    public RSException createRSException() {
+        return new RSException();
+    }
+
+    /**
+     * Create an instance of {@link MakeReservationResponse }
+     * 
+     */
+    public MakeReservationResponse createMakeReservationResponse() {
+        return new MakeReservationResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetConfidentialReservations }
+     * 
+     */
+    public GetConfidentialReservations createGetConfidentialReservations() {
+        return new GetConfidentialReservations();
     }
 
     /**
@@ -143,6 +111,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ReservationConflictException }
+     * 
+     */
+    public ReservationConflictException createReservationConflictException() {
+        return new ReservationConflictException();
+    }
+
+    /**
+     * Create an instance of {@link GetReservations }
+     * 
+     */
+    public GetReservations createGetReservations() {
+        return new GetReservations();
+    }
+
+    /**
+     * Create an instance of {@link DeleteReservationResponse }
+     * 
+     */
+    public DeleteReservationResponse createDeleteReservationResponse() {
+        return new DeleteReservationResponse();
+    }
+
+    /**
      * Create an instance of {@link PublicReservationData }
      * 
      */
@@ -151,11 +143,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link DeleteReservation }
+     * Create an instance of {@link GetReservationResponse }
      * 
      */
-    public DeleteReservation createDeleteReservation() {
-        return new DeleteReservation();
+    public GetReservationResponse createGetReservationResponse() {
+        return new GetReservationResponse();
     }
 
     /**
@@ -167,6 +159,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ConfidentialReservationData }
+     * 
+     */
+    public ConfidentialReservationData createConfidentialReservationData() {
+        return new ConfidentialReservationData();
+    }
+
+    /**
      * Create an instance of {@link ReservationNotFoundException }
      * 
      */
@@ -175,11 +175,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetReservations }
+     * Create an instance of {@link DeleteReservation }
      * 
      */
-    public GetReservations createGetReservations() {
-        return new GetReservations();
+    public DeleteReservation createDeleteReservation() {
+        return new DeleteReservation();
     }
 
     /**
