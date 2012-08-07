@@ -43,46 +43,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetConfigurationResponse }
-     * 
-     */
-    public GetConfigurationResponse createGetConfigurationResponse() {
-        return new GetConfigurationResponse();
-    }
-
-    /**
-     * Create an instance of {@link UnknownReservationIdException }
-     * 
-     */
-    public UnknownReservationIdException createUnknownReservationIdException() {
-        return new UnknownReservationIdException();
-    }
-
-    /**
-     * Create an instance of {@link SecretReservationKey }
-     * 
-     */
-    public SecretReservationKey createSecretReservationKey() {
-        return new SecretReservationKey();
-    }
-
-    /**
-     * Create an instance of {@link Free }
-     * 
-     */
-    public Free createFree() {
-        return new Free();
-    }
-
-    /**
-     * Create an instance of {@link GetInstance }
-     * 
-     */
-    public GetInstance createGetInstance() {
-        return new GetInstance();
-    }
-
-    /**
      * Create an instance of {@link GetInstanceResponse }
      * 
      */
@@ -107,14 +67,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AreNodesAliveResponse }
-     * 
-     */
-    public AreNodesAliveResponse createAreNodesAliveResponse() {
-        return new AreNodesAliveResponse();
-    }
-
-    /**
      * Create an instance of {@link FreeResponse }
      * 
      */
@@ -123,11 +75,51 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetConfigurationResponse }
+     * 
+     */
+    public GetConfigurationResponse createGetConfigurationResponse() {
+        return new GetConfigurationResponse();
+    }
+
+    /**
      * Create an instance of {@link ExperimentNotRunningException }
      * 
      */
     public ExperimentNotRunningException createExperimentNotRunningException() {
         return new ExperimentNotRunningException();
+    }
+
+    /**
+     * Create an instance of {@link GetInstance }
+     * 
+     */
+    public GetInstance createGetInstance() {
+        return new GetInstance();
+    }
+
+    /**
+     * Create an instance of {@link Free }
+     * 
+     */
+    public Free createFree() {
+        return new Free();
+    }
+
+    /**
+     * Create an instance of {@link UnknownReservationIdException }
+     * 
+     */
+    public UnknownReservationIdException createUnknownReservationIdException() {
+        return new UnknownReservationIdException();
+    }
+
+    /**
+     * Create an instance of {@link AreNodesAliveResponse }
+     * 
+     */
+    public AreNodesAliveResponse createAreNodesAliveResponse() {
+        return new AreNodesAliveResponse();
     }
 
     /**
