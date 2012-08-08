@@ -36,6 +36,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetNetworkResponse }
+     * 
+     */
+    public GetNetworkResponse createGetNetworkResponse() {
+        return new GetNetworkResponse();
+    }
+
+    /**
      * Create an instance of {@link Message }
      * 
      */
@@ -52,11 +60,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SecretAuthenticationKey }
+     * Create an instance of {@link KeyValuePair }
      * 
      */
-    public SecretAuthenticationKey createSecretAuthenticationKey() {
-        return new SecretAuthenticationKey();
+    public KeyValuePair createKeyValuePair() {
+        return new KeyValuePair();
     }
 
     /**
@@ -76,19 +84,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetNetworkResponse }
+     * Create an instance of {@link SecretAuthenticationKey }
      * 
      */
-    public GetNetworkResponse createGetNetworkResponse() {
-        return new GetNetworkResponse();
-    }
-
-    /**
-     * Create an instance of {@link KeyValuePair }
-     * 
-     */
-    public KeyValuePair createKeyValuePair() {
-        return new KeyValuePair();
+    public SecretAuthenticationKey createSecretAuthenticationKey() {
+        return new SecretAuthenticationKey();
     }
 
     /**

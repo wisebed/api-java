@@ -21,8 +21,8 @@ import eu.wisebed.api.common.UsernameUrnPrefixPair;
  */
 @WebService(name = "SNAA", targetNamespace = "http://testbed.wisebed.eu/api/snaa/v1/")
 @XmlSeeAlso({
-    eu.wisebed.api.common.ObjectFactory.class,
-    eu.wisebed.api.snaa.ObjectFactory.class
+    eu.wisebed.api.snaa.ObjectFactory.class,
+    eu.wisebed.api.common.ObjectFactory.class
 })
 public interface SNAA {
 
@@ -65,6 +65,23 @@ public interface SNAA {
         Action action,
         @WebParam(name = "nodeUrns", targetNamespace = "")
         String nodeUrns)
+        throws SNAAExceptionException
+    ;
+
+    /**
+     * 
+     * @param secretAuthenticationKey
+     * @return
+     *     returns eu.wisebed.api.snaa.IsValidResponse.ValidationResult
+     * @throws SNAAExceptionException
+     */
+    @WebMethod
+    @WebResult(name = "ValidationResult", targetNamespace = "")
+    @RequestWrapper(localName = "isValid", targetNamespace = "http://testbed.wisebed.eu/api/snaa/v1/", className = "eu.wisebed.api.snaa.IsValid")
+    @ResponseWrapper(localName = "isValidResponse", targetNamespace = "http://testbed.wisebed.eu/api/snaa/v1/", className = "eu.wisebed.api.snaa.IsValidResponse")
+    public eu.wisebed.api.snaa.IsValidResponse.ValidationResult isValid(
+        @WebParam(name = "secretAuthenticationKey", targetNamespace = "")
+        SecretAuthenticationKey secretAuthenticationKey)
         throws SNAAExceptionException
     ;
 

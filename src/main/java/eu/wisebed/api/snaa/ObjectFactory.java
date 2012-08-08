@@ -26,7 +26,9 @@ public class ObjectFactory {
 
     private final static QName _AuthenticateResponse_QNAME = new QName("http://testbed.wisebed.eu/api/snaa/v1/", "authenticateResponse");
     private final static QName _IsAuthorized_QNAME = new QName("http://testbed.wisebed.eu/api/snaa/v1/", "isAuthorized");
+    private final static QName _IsValid_QNAME = new QName("http://testbed.wisebed.eu/api/snaa/v1/", "isValid");
     private final static QName _SNAAFault_QNAME = new QName("http://testbed.wisebed.eu/api/snaa/v1/", "SNAAFault");
+    private final static QName _IsValidResponse_QNAME = new QName("http://testbed.wisebed.eu/api/snaa/v1/", "isValidResponse");
     private final static QName _AuthenticationFault_QNAME = new QName("http://testbed.wisebed.eu/api/snaa/v1/", "AuthenticationFault");
     private final static QName _Authenticate_QNAME = new QName("http://testbed.wisebed.eu/api/snaa/v1/", "authenticate");
     private final static QName _IsAuthorizedResponse_QNAME = new QName("http://testbed.wisebed.eu/api/snaa/v1/", "isAuthorizedResponse");
@@ -39,11 +41,59 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AuthorizationResponse }
+     * 
+     */
+    public AuthorizationResponse createAuthorizationResponse() {
+        return new AuthorizationResponse();
+    }
+
+    /**
      * Create an instance of {@link IsAuthorized }
      * 
      */
     public IsAuthorized createIsAuthorized() {
         return new IsAuthorized();
+    }
+
+    /**
+     * Create an instance of {@link AuthenticateResponse }
+     * 
+     */
+    public AuthenticateResponse createAuthenticateResponse() {
+        return new AuthenticateResponse();
+    }
+
+    /**
+     * Create an instance of {@link IsValidResponse.ValidationResult }
+     * 
+     */
+    public IsValidResponse.ValidationResult createIsValidResponseValidationResult() {
+        return new IsValidResponse.ValidationResult();
+    }
+
+    /**
+     * Create an instance of {@link Authenticate }
+     * 
+     */
+    public Authenticate createAuthenticate() {
+        return new Authenticate();
+    }
+
+    /**
+     * Create an instance of {@link IsAuthorizedResponse }
+     * 
+     */
+    public IsAuthorizedResponse createIsAuthorizedResponse() {
+        return new IsAuthorizedResponse();
+    }
+
+    /**
+     * Create an instance of {@link IsValid }
+     * 
+     */
+    public IsValid createIsValid() {
+        return new IsValid();
     }
 
     /**
@@ -63,43 +113,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link IsAuthorizedResponse }
-     * 
-     */
-    public IsAuthorizedResponse createIsAuthorizedResponse() {
-        return new IsAuthorizedResponse();
-    }
-
-    /**
-     * Create an instance of {@link AuthorizationResponse }
-     * 
-     */
-    public AuthorizationResponse createAuthorizationResponse() {
-        return new AuthorizationResponse();
-    }
-
-    /**
-     * Create an instance of {@link Authenticate }
-     * 
-     */
-    public Authenticate createAuthenticate() {
-        return new Authenticate();
-    }
-
-    /**
-     * Create an instance of {@link AuthenticateResponse }
-     * 
-     */
-    public AuthenticateResponse createAuthenticateResponse() {
-        return new AuthenticateResponse();
-    }
-
-    /**
      * Create an instance of {@link SNAAException }
      * 
      */
     public SNAAException createSNAAException() {
         return new SNAAException();
+    }
+
+    /**
+     * Create an instance of {@link IsValidResponse }
+     * 
+     */
+    public IsValidResponse createIsValidResponse() {
+        return new IsValidResponse();
     }
 
     /**
@@ -121,12 +147,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link IsValid }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://testbed.wisebed.eu/api/snaa/v1/", name = "isValid")
+    public JAXBElement<IsValid> createIsValid(IsValid value) {
+        return new JAXBElement<IsValid>(_IsValid_QNAME, IsValid.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link SNAAException }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://testbed.wisebed.eu/api/snaa/v1/", name = "SNAAFault")
     public JAXBElement<SNAAException> createSNAAFault(SNAAException value) {
         return new JAXBElement<SNAAException>(_SNAAFault_QNAME, SNAAException.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link IsValidResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://testbed.wisebed.eu/api/snaa/v1/", name = "isValidResponse")
+    public JAXBElement<IsValidResponse> createIsValidResponse(IsValidResponse value) {
+        return new JAXBElement<IsValidResponse>(_IsValidResponse_QNAME, IsValidResponse.class, null, value);
     }
 
     /**

@@ -22,8 +22,8 @@ import eu.wisebed.api.common.SecretReservationKey;
  */
 @WebService(name = "SessionManagement", targetNamespace = "urn:SessionManagementService")
 @XmlSeeAlso({
-    eu.wisebed.api.common.ObjectFactory.class,
-    eu.wisebed.api.sm.ObjectFactory.class
+    eu.wisebed.api.sm.ObjectFactory.class,
+    eu.wisebed.api.common.ObjectFactory.class
 })
 public interface SessionManagement {
 
@@ -67,8 +67,8 @@ public interface SessionManagement {
      * @param secretReservationKey
      * @return
      *     returns java.lang.String
-     * @throws UnknownReservationIdException_Exception
      * @throws ExperimentNotRunningException_Exception
+     * @throws UnknownReservationIdException_Exception
      */
     @WebMethod
     @WebResult(targetNamespace = "")

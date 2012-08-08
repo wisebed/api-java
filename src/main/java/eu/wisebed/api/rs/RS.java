@@ -22,8 +22,8 @@ import eu.wisebed.api.common.SecretReservationKey;
  */
 @WebService(name = "RS", targetNamespace = "urn:RSService")
 @XmlSeeAlso({
-    eu.wisebed.api.rs.ObjectFactory.class,
-    eu.wisebed.api.common.ObjectFactory.class
+    eu.wisebed.api.common.ObjectFactory.class,
+    eu.wisebed.api.rs.ObjectFactory.class
 })
 public interface RS {
 
@@ -107,9 +107,9 @@ public interface RS {
      * @param reservation
      * @return
      *     returns java.util.List<eu.wisebed.api.common.SecretReservationKey>
-     * @throws ReservationConflictExceptionException
-     * @throws RSExceptionException
      * @throws AuthorizationExceptionException
+     * @throws RSExceptionException
+     * @throws ReservationConflictExceptionException
      */
     @WebMethod
     @WebResult(name = "secretReservationKey", targetNamespace = "")
