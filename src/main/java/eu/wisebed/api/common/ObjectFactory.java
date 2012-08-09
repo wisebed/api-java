@@ -36,43 +36,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Message }
-     * 
-     */
-    public Message createMessage() {
-        return new Message();
-    }
-
-    /**
-     * Create an instance of {@link UsernameNodeUrnsMap }
-     * 
-     */
-    public UsernameNodeUrnsMap createUsernameNodeUrnsMap() {
-        return new UsernameNodeUrnsMap();
-    }
-
-    /**
-     * Create an instance of {@link SecretReservationKey }
-     * 
-     */
-    public SecretReservationKey createSecretReservationKey() {
-        return new SecretReservationKey();
-    }
-
-    /**
      * Create an instance of {@link GetNetwork }
      * 
      */
     public GetNetwork createGetNetwork() {
         return new GetNetwork();
-    }
-
-    /**
-     * Create an instance of {@link SecretAuthenticationKey }
-     * 
-     */
-    public SecretAuthenticationKey createSecretAuthenticationKey() {
-        return new SecretAuthenticationKey();
     }
 
     /**
@@ -84,11 +52,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link UsernameUrnPrefixPair }
+     * Create an instance of {@link Message }
      * 
      */
-    public UsernameUrnPrefixPair createUsernameUrnPrefixPair() {
-        return new UsernameUrnPrefixPair();
+    public Message createMessage() {
+        return new Message();
+    }
+
+    /**
+     * Create an instance of {@link SecretAuthenticationKey }
+     * 
+     */
+    public SecretAuthenticationKey createSecretAuthenticationKey() {
+        return new SecretAuthenticationKey();
+    }
+
+    /**
+     * Create an instance of {@link SecretReservationKey }
+     * 
+     */
+    public SecretReservationKey createSecretReservationKey() {
+        return new SecretReservationKey();
     }
 
     /**
@@ -97,6 +81,22 @@ public class ObjectFactory {
      */
     public GetNetworkResponse createGetNetworkResponse() {
         return new GetNetworkResponse();
+    }
+
+    /**
+     * Create an instance of {@link UsernameNodeUrnsMap }
+     * 
+     */
+    public UsernameNodeUrnsMap createUsernameNodeUrnsMap() {
+        return new UsernameNodeUrnsMap();
+    }
+
+    /**
+     * Create an instance of {@link UsernameUrnPrefixPair }
+     * 
+     */
+    public UsernameUrnPrefixPair createUsernameUrnPrefixPair() {
+        return new UsernameUrnPrefixPair();
     }
 
     /**

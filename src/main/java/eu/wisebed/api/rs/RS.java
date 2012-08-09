@@ -22,8 +22,8 @@ import eu.wisebed.api.common.SecretReservationKey;
  */
 @WebService(name = "RS", targetNamespace = "urn:RSService")
 @XmlSeeAlso({
-    eu.wisebed.api.common.ObjectFactory.class,
-    eu.wisebed.api.rs.ObjectFactory.class
+    eu.wisebed.api.rs.ObjectFactory.class,
+    eu.wisebed.api.common.ObjectFactory.class
 })
 public interface RS {
 
@@ -89,8 +89,8 @@ public interface RS {
     /**
      * 
      * @param secretReservationKey
-     * @throws RSExceptionException
      * @throws ReservationNotFoundExceptionException
+     * @throws RSExceptionException
      */
     @WebMethod
     @RequestWrapper(localName = "deleteReservation", targetNamespace = "urn:RSService", className = "eu.wisebed.api.rs.DeleteReservation")

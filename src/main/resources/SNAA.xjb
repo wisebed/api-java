@@ -1,7 +1,7 @@
 ﻿<bindings
 		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 		xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-		wsdlLocation="SNAAService.wsdl"
+		wsdlLocation="SNAA.wsdl"
 		xmlns="http://java.sun.com/xml/ns/jaxws">
 
 	<bindings node="wsdl:definitions">

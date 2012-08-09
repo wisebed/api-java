@@ -41,43 +41,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AreNodesAliveResponse }
+     * Create an instance of {@link ExperimentNotRunningException }
      * 
      */
-    public AreNodesAliveResponse createAreNodesAliveResponse() {
-        return new AreNodesAliveResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetInstanceResponse }
-     * 
-     */
-    public GetInstanceResponse createGetInstanceResponse() {
-        return new GetInstanceResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetConfiguration }
-     * 
-     */
-    public GetConfiguration createGetConfiguration() {
-        return new GetConfiguration();
-    }
-
-    /**
-     * Create an instance of {@link AreNodesAlive }
-     * 
-     */
-    public AreNodesAlive createAreNodesAlive() {
-        return new AreNodesAlive();
-    }
-
-    /**
-     * Create an instance of {@link GetConfigurationResponse }
-     * 
-     */
-    public GetConfigurationResponse createGetConfigurationResponse() {
-        return new GetConfigurationResponse();
+    public ExperimentNotRunningException createExperimentNotRunningException() {
+        return new ExperimentNotRunningException();
     }
 
     /**
@@ -89,11 +57,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ExperimentNotRunningException }
+     * Create an instance of {@link GetConfigurationResponse }
      * 
      */
-    public ExperimentNotRunningException createExperimentNotRunningException() {
-        return new ExperimentNotRunningException();
+    public GetConfigurationResponse createGetConfigurationResponse() {
+        return new GetConfigurationResponse();
+    }
+
+    /**
+     * Create an instance of {@link AreNodesAliveResponse }
+     * 
+     */
+    public AreNodesAliveResponse createAreNodesAliveResponse() {
+        return new AreNodesAliveResponse();
     }
 
     /**
@@ -102,6 +78,30 @@ public class ObjectFactory {
      */
     public GetInstance createGetInstance() {
         return new GetInstance();
+    }
+
+    /**
+     * Create an instance of {@link GetConfiguration }
+     * 
+     */
+    public GetConfiguration createGetConfiguration() {
+        return new GetConfiguration();
+    }
+
+    /**
+     * Create an instance of {@link GetInstanceResponse }
+     * 
+     */
+    public GetInstanceResponse createGetInstanceResponse() {
+        return new GetInstanceResponse();
+    }
+
+    /**
+     * Create an instance of {@link AreNodesAlive }
+     * 
+     */
+    public AreNodesAlive createAreNodesAlive() {
+        return new AreNodesAlive();
     }
 
     /**

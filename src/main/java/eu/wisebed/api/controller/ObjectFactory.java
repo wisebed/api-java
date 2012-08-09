@@ -38,30 +38,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Status }
-     * 
-     */
-    public Status createStatus() {
-        return new Status();
-    }
-
-    /**
-     * Create an instance of {@link RequestStatus }
-     * 
-     */
-    public RequestStatus createRequestStatus() {
-        return new RequestStatus();
-    }
-
-    /**
-     * Create an instance of {@link ExperimentEnded }
-     * 
-     */
-    public ExperimentEnded createExperimentEnded() {
-        return new ExperimentEnded();
-    }
-
-    /**
      * Create an instance of {@link Receive }
      * 
      */
@@ -78,11 +54,35 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ExperimentEnded }
+     * 
+     */
+    public ExperimentEnded createExperimentEnded() {
+        return new ExperimentEnded();
+    }
+
+    /**
+     * Create an instance of {@link Status }
+     * 
+     */
+    public Status createStatus() {
+        return new Status();
+    }
+
+    /**
      * Create an instance of {@link ReceiveStatus }
      * 
      */
     public ReceiveStatus createReceiveStatus() {
         return new ReceiveStatus();
+    }
+
+    /**
+     * Create an instance of {@link RequestStatus }
+     * 
+     */
+    public RequestStatus createRequestStatus() {
+        return new RequestStatus();
     }
 
     /**

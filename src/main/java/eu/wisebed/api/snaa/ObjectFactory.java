@@ -41,27 +41,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link IsValidResponse.ValidationResult }
+     * Create an instance of {@link AuthenticateResponse }
      * 
      */
-    public IsValidResponse.ValidationResult createIsValidResponseValidationResult() {
-        return new IsValidResponse.ValidationResult();
-    }
-
-    /**
-     * Create an instance of {@link IsValid }
-     * 
-     */
-    public IsValid createIsValid() {
-        return new IsValid();
-    }
-
-    /**
-     * Create an instance of {@link IsValidResponse }
-     * 
-     */
-    public IsValidResponse createIsValidResponse() {
-        return new IsValidResponse();
+    public AuthenticateResponse createAuthenticateResponse() {
+        return new AuthenticateResponse();
     }
 
     /**
@@ -73,14 +57,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link IsAuthorizedResponse }
-     * 
-     */
-    public IsAuthorizedResponse createIsAuthorizedResponse() {
-        return new IsAuthorizedResponse();
-    }
-
-    /**
      * Create an instance of {@link AuthorizationResponse }
      * 
      */
@@ -89,27 +65,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Authenticate }
+     * Create an instance of {@link IsValidResponse }
      * 
      */
-    public Authenticate createAuthenticate() {
-        return new Authenticate();
-    }
-
-    /**
-     * Create an instance of {@link IsAuthorized }
-     * 
-     */
-    public IsAuthorized createIsAuthorized() {
-        return new IsAuthorized();
-    }
-
-    /**
-     * Create an instance of {@link AuthenticationTriple }
-     * 
-     */
-    public AuthenticationTriple createAuthenticationTriple() {
-        return new AuthenticationTriple();
+    public IsValidResponse createIsValidResponse() {
+        return new IsValidResponse();
     }
 
     /**
@@ -121,11 +81,51 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AuthenticateResponse }
+     * Create an instance of {@link IsAuthorizedResponse }
      * 
      */
-    public AuthenticateResponse createAuthenticateResponse() {
-        return new AuthenticateResponse();
+    public IsAuthorizedResponse createIsAuthorizedResponse() {
+        return new IsAuthorizedResponse();
+    }
+
+    /**
+     * Create an instance of {@link IsValid }
+     * 
+     */
+    public IsValid createIsValid() {
+        return new IsValid();
+    }
+
+    /**
+     * Create an instance of {@link Authenticate }
+     * 
+     */
+    public Authenticate createAuthenticate() {
+        return new Authenticate();
+    }
+
+    /**
+     * Create an instance of {@link IsValidResponse.ValidationResult }
+     * 
+     */
+    public IsValidResponse.ValidationResult createIsValidResponseValidationResult() {
+        return new IsValidResponse.ValidationResult();
+    }
+
+    /**
+     * Create an instance of {@link AuthenticationTriple }
+     * 
+     */
+    public AuthenticationTriple createAuthenticationTriple() {
+        return new AuthenticationTriple();
+    }
+
+    /**
+     * Create an instance of {@link IsAuthorized }
+     * 
+     */
+    public IsAuthorized createIsAuthorized() {
+        return new IsAuthorized();
     }
 
     /**
