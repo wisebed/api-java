@@ -41,27 +41,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link UnknownReservationIdException }
+     * Create an instance of {@link AreNodesAliveResponse }
      * 
      */
-    public UnknownReservationIdException createUnknownReservationIdException() {
-        return new UnknownReservationIdException();
-    }
-
-    /**
-     * Create an instance of {@link GetInstance }
-     * 
-     */
-    public GetInstance createGetInstance() {
-        return new GetInstance();
-    }
-
-    /**
-     * Create an instance of {@link GetConfiguration }
-     * 
-     */
-    public GetConfiguration createGetConfiguration() {
-        return new GetConfiguration();
+    public AreNodesAliveResponse createAreNodesAliveResponse() {
+        return new AreNodesAliveResponse();
     }
 
     /**
@@ -70,6 +54,14 @@ public class ObjectFactory {
      */
     public GetInstanceResponse createGetInstanceResponse() {
         return new GetInstanceResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetConfiguration }
+     * 
+     */
+    public GetConfiguration createGetConfiguration() {
+        return new GetConfiguration();
     }
 
     /**
@@ -89,6 +81,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link UnknownReservationIdException }
+     * 
+     */
+    public UnknownReservationIdException createUnknownReservationIdException() {
+        return new UnknownReservationIdException();
+    }
+
+    /**
      * Create an instance of {@link ExperimentNotRunningException }
      * 
      */
@@ -97,11 +97,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AreNodesAliveResponse }
+     * Create an instance of {@link GetInstance }
      * 
      */
-    public AreNodesAliveResponse createAreNodesAliveResponse() {
-        return new AreNodesAliveResponse();
+    public GetInstance createGetInstance() {
+        return new GetInstance();
     }
 
     /**

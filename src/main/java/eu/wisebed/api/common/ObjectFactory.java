@@ -36,14 +36,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetNetworkResponse }
-     * 
-     */
-    public GetNetworkResponse createGetNetworkResponse() {
-        return new GetNetworkResponse();
-    }
-
-    /**
      * Create an instance of {@link Message }
      * 
      */
@@ -52,19 +44,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link UsernameUrnPrefixPair }
+     * Create an instance of {@link UsernameNodeUrnsMap }
      * 
      */
-    public UsernameUrnPrefixPair createUsernameUrnPrefixPair() {
-        return new UsernameUrnPrefixPair();
-    }
-
-    /**
-     * Create an instance of {@link KeyValuePair }
-     * 
-     */
-    public KeyValuePair createKeyValuePair() {
-        return new KeyValuePair();
+    public UsernameNodeUrnsMap createUsernameNodeUrnsMap() {
+        return new UsernameNodeUrnsMap();
     }
 
     /**
@@ -89,6 +73,30 @@ public class ObjectFactory {
      */
     public SecretAuthenticationKey createSecretAuthenticationKey() {
         return new SecretAuthenticationKey();
+    }
+
+    /**
+     * Create an instance of {@link KeyValuePair }
+     * 
+     */
+    public KeyValuePair createKeyValuePair() {
+        return new KeyValuePair();
+    }
+
+    /**
+     * Create an instance of {@link UsernameUrnPrefixPair }
+     * 
+     */
+    public UsernameUrnPrefixPair createUsernameUrnPrefixPair() {
+        return new UsernameUrnPrefixPair();
+    }
+
+    /**
+     * Create an instance of {@link GetNetworkResponse }
+     * 
+     */
+    public GetNetworkResponse createGetNetworkResponse() {
+        return new GetNetworkResponse();
     }
 
     /**

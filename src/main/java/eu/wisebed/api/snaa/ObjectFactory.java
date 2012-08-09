@@ -41,51 +41,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AuthorizationResponse }
-     * 
-     */
-    public AuthorizationResponse createAuthorizationResponse() {
-        return new AuthorizationResponse();
-    }
-
-    /**
-     * Create an instance of {@link IsAuthorized }
-     * 
-     */
-    public IsAuthorized createIsAuthorized() {
-        return new IsAuthorized();
-    }
-
-    /**
-     * Create an instance of {@link AuthenticateResponse }
-     * 
-     */
-    public AuthenticateResponse createAuthenticateResponse() {
-        return new AuthenticateResponse();
-    }
-
-    /**
      * Create an instance of {@link IsValidResponse.ValidationResult }
      * 
      */
     public IsValidResponse.ValidationResult createIsValidResponseValidationResult() {
         return new IsValidResponse.ValidationResult();
-    }
-
-    /**
-     * Create an instance of {@link Authenticate }
-     * 
-     */
-    public Authenticate createAuthenticate() {
-        return new Authenticate();
-    }
-
-    /**
-     * Create an instance of {@link IsAuthorizedResponse }
-     * 
-     */
-    public IsAuthorizedResponse createIsAuthorizedResponse() {
-        return new IsAuthorizedResponse();
     }
 
     /**
@@ -97,11 +57,51 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link IsValidResponse }
+     * 
+     */
+    public IsValidResponse createIsValidResponse() {
+        return new IsValidResponse();
+    }
+
+    /**
      * Create an instance of {@link AuthenticationException }
      * 
      */
     public AuthenticationException createAuthenticationException() {
         return new AuthenticationException();
+    }
+
+    /**
+     * Create an instance of {@link IsAuthorizedResponse }
+     * 
+     */
+    public IsAuthorizedResponse createIsAuthorizedResponse() {
+        return new IsAuthorizedResponse();
+    }
+
+    /**
+     * Create an instance of {@link AuthorizationResponse }
+     * 
+     */
+    public AuthorizationResponse createAuthorizationResponse() {
+        return new AuthorizationResponse();
+    }
+
+    /**
+     * Create an instance of {@link Authenticate }
+     * 
+     */
+    public Authenticate createAuthenticate() {
+        return new Authenticate();
+    }
+
+    /**
+     * Create an instance of {@link IsAuthorized }
+     * 
+     */
+    public IsAuthorized createIsAuthorized() {
+        return new IsAuthorized();
     }
 
     /**
@@ -121,11 +121,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link IsValidResponse }
+     * Create an instance of {@link AuthenticateResponse }
      * 
      */
-    public IsValidResponse createIsValidResponse() {
-        return new IsValidResponse();
+    public AuthenticateResponse createAuthenticateResponse() {
+        return new AuthenticateResponse();
     }
 
     /**

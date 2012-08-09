@@ -125,7 +125,5 @@ public class UsernameUrnPrefixPair {
 			return false;
 		return true;
 	}
-    
-    
 
 }

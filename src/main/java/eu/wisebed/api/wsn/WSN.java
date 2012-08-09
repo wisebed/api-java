@@ -20,8 +20,8 @@ import eu.wisebed.api.common.Message;
  */
 @WebService(name = "WSN", targetNamespace = "urn:WSNService")
 @XmlSeeAlso({
-    eu.wisebed.api.wsn.ObjectFactory.class,
-    eu.wisebed.api.common.ObjectFactory.class
+    eu.wisebed.api.common.ObjectFactory.class,
+    eu.wisebed.api.wsn.ObjectFactory.class
 })
 public interface WSN {
 

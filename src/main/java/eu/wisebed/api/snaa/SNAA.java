@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
 import eu.wisebed.api.common.SecretAuthenticationKey;
-import eu.wisebed.api.common.UsernameUrnPrefixPair;
+import eu.wisebed.api.common.UsernameNodeUrnsMap;
 
 
 /**
@@ -32,8 +32,8 @@ public interface SNAA {
      * @param authenticationData
      * @return
      *     returns java.util.List<eu.wisebed.api.common.SecretAuthenticationKey>
-     * @throws SNAAExceptionException
      * @throws AuthenticationExceptionException
+     * @throws SNAAExceptionException
      */
     @WebMethod
     @WebResult(name = "secretAuthenticationKey", targetNamespace = "")
@@ -47,9 +47,8 @@ public interface SNAA {
 
     /**
      * 
-     * @param usernames
+     * @param usernameNodeUrnsMapList
      * @param action
-     * @param nodeUrns
      * @return
      *     returns eu.wisebed.api.snaa.AuthorizationResponse
      * @throws SNAAExceptionException
@@ -59,12 +58,10 @@ public interface SNAA {
     @RequestWrapper(localName = "isAuthorized", targetNamespace = "http://testbed.wisebed.eu/api/snaa/v1/", className = "eu.wisebed.api.snaa.IsAuthorized")
     @ResponseWrapper(localName = "isAuthorizedResponse", targetNamespace = "http://testbed.wisebed.eu/api/snaa/v1/", className = "eu.wisebed.api.snaa.IsAuthorizedResponse")
     public AuthorizationResponse isAuthorized(
-        @WebParam(name = "usernames", targetNamespace = "")
-        List<UsernameUrnPrefixPair> usernames,
+        @WebParam(name = "usernameNodeUrnsMapList", targetNamespace = "")
+        List<UsernameNodeUrnsMap> usernameNodeUrnsMapList,
         @WebParam(name = "action", targetNamespace = "")
-        Action action,
-        @WebParam(name = "nodeUrns", targetNamespace = "")
-        String nodeUrns)
+        Action action)
         throws SNAAExceptionException
     ;
 

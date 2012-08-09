@@ -67,8 +67,8 @@ public interface SessionManagement {
      * @param secretReservationKey
      * @return
      *     returns java.lang.String
-     * @throws ExperimentNotRunningException_Exception
      * @throws UnknownReservationIdException_Exception
+     * @throws ExperimentNotRunningException_Exception
      */
     @WebMethod
     @WebResult(targetNamespace = "")

@@ -73,8 +73,8 @@ public interface RS {
      * @param secretReservationKey
      * @return
      *     returns java.util.List<eu.wisebed.api.rs.ConfidentialReservationData>
-     * @throws RSExceptionException
      * @throws ReservationNotFoundExceptionException
+     * @throws RSExceptionException
      */
     @WebMethod
     @WebResult(name = "reservationData", targetNamespace = "")
@@ -108,8 +108,8 @@ public interface RS {
      * @return
      *     returns java.util.List<eu.wisebed.api.common.SecretReservationKey>
      * @throws AuthorizationExceptionException
-     * @throws RSExceptionException
      * @throws ReservationConflictExceptionException
+     * @throws RSExceptionException
      */
     @WebMethod
     @WebResult(name = "secretReservationKey", targetNamespace = "")
