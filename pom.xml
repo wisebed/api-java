@@ -6,7 +6,7 @@
 	<groupId>eu.wisebed</groupId>
 	<artifactId>api</artifactId>
 	<packaging>jar</packaging>
-	<version>2.4-SNAPSHOT</version>
+	<version>3.0-SNAPSHOT</version>
 	<name>WISEBED API</name>
 
 	<build>
