@@ -41,38 +41,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ExperimentNotRunningException }
-     * 
-     */
-    public ExperimentNotRunningException createExperimentNotRunningException() {
-        return new ExperimentNotRunningException();
-    }
-
-    /**
-     * Create an instance of {@link UnknownReservationIdException }
-     * 
-     */
-    public UnknownReservationIdException createUnknownReservationIdException() {
-        return new UnknownReservationIdException();
-    }
-
-    /**
-     * Create an instance of {@link GetConfigurationResponse }
-     * 
-     */
-    public GetConfigurationResponse createGetConfigurationResponse() {
-        return new GetConfigurationResponse();
-    }
-
-    /**
-     * Create an instance of {@link AreNodesAliveResponse }
-     * 
-     */
-    public AreNodesAliveResponse createAreNodesAliveResponse() {
-        return new AreNodesAliveResponse();
-    }
-
-    /**
      * Create an instance of {@link GetInstance }
      * 
      */
@@ -89,6 +57,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AreNodesAlive }
+     * 
+     */
+    public AreNodesAlive createAreNodesAlive() {
+        return new AreNodesAlive();
+    }
+
+    /**
+     * Create an instance of {@link ExperimentNotRunningException }
+     * 
+     */
+    public ExperimentNotRunningException createExperimentNotRunningException() {
+        return new ExperimentNotRunningException();
+    }
+
+    /**
      * Create an instance of {@link GetInstanceResponse }
      * 
      */
@@ -97,11 +81,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AreNodesAlive }
+     * Create an instance of {@link AreNodesAliveResponse }
      * 
      */
-    public AreNodesAlive createAreNodesAlive() {
-        return new AreNodesAlive();
+    public AreNodesAliveResponse createAreNodesAliveResponse() {
+        return new AreNodesAliveResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetConfigurationResponse }
+     * 
+     */
+    public GetConfigurationResponse createGetConfigurationResponse() {
+        return new GetConfigurationResponse();
+    }
+
+    /**
+     * Create an instance of {@link UnknownReservationIdException }
+     * 
+     */
+    public UnknownReservationIdException createUnknownReservationIdException() {
+        return new UnknownReservationIdException();
     }
 
     /**

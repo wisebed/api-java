@@ -29,6 +29,7 @@ public class ObjectFactory {
     private final static QName _DisableNode_QNAME = new QName("urn:WSNService", "disableNode");
     private final static QName _DisableNodeResponse_QNAME = new QName("urn:WSNService", "disableNodeResponse");
     private final static QName _DestroyVirtualLinkResponse_QNAME = new QName("urn:WSNService", "destroyVirtualLinkResponse");
+    private final static QName _GetChannelPipelinesResponse_QNAME = new QName("urn:WSNService", "getChannelPipelinesResponse");
     private final static QName _SendResponse_QNAME = new QName("urn:WSNService", "sendResponse");
     private final static QName _EnablePhysicalLink_QNAME = new QName("urn:WSNService", "enablePhysicalLink");
     private final static QName _DisablePhysicalLinkResponse_QNAME = new QName("urn:WSNService", "disablePhysicalLinkResponse");
@@ -47,6 +48,7 @@ public class ObjectFactory {
     private final static QName _DisablePhysicalLink_QNAME = new QName("urn:WSNService", "disablePhysicalLink");
     private final static QName _GetSupportedChannelHandlersResponse_QNAME = new QName("urn:WSNService", "getSupportedChannelHandlersResponse");
     private final static QName _SetChannelPipelineResponse_QNAME = new QName("urn:WSNService", "setChannelPipelineResponse");
+    private final static QName _GetChannelPipelines_QNAME = new QName("urn:WSNService", "getChannelPipelines");
     private final static QName _Send_QNAME = new QName("urn:WSNService", "send");
     private final static QName _EnablePhysicalLinkResponse_QNAME = new QName("urn:WSNService", "enablePhysicalLinkResponse");
     private final static QName _SetVirtualLinkResponse_QNAME = new QName("urn:WSNService", "setVirtualLinkResponse");
@@ -65,27 +67,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ChannelHandlerConfiguration }
+     * Create an instance of {@link ResetNodesResponse }
      * 
      */
-    public ChannelHandlerConfiguration createChannelHandlerConfiguration() {
-        return new ChannelHandlerConfiguration();
+    public ResetNodesResponse createResetNodesResponse() {
+        return new ResetNodesResponse();
     }
 
     /**
-     * Create an instance of {@link DisablePhysicalLinkResponse }
+     * Create an instance of {@link SetChannelPipelineResponse }
      * 
      */
-    public DisablePhysicalLinkResponse createDisablePhysicalLinkResponse() {
-        return new DisablePhysicalLinkResponse();
-    }
-
-    /**
-     * Create an instance of {@link Program }
-     * 
-     */
-    public Program createProgram() {
-        return new Program();
+    public SetChannelPipelineResponse createSetChannelPipelineResponse() {
+        return new SetChannelPipelineResponse();
     }
 
     /**
@@ -97,155 +91,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link EnableNodeResponse }
-     * 
-     */
-    public EnableNodeResponse createEnableNodeResponse() {
-        return new EnableNodeResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetVersionResponse }
-     * 
-     */
-    public GetVersionResponse createGetVersionResponse() {
-        return new GetVersionResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetFiltersResponse }
-     * 
-     */
-    public GetFiltersResponse createGetFiltersResponse() {
-        return new GetFiltersResponse();
-    }
-
-    /**
-     * Create an instance of {@link DestroyVirtualLink }
-     * 
-     */
-    public DestroyVirtualLink createDestroyVirtualLink() {
-        return new DestroyVirtualLink();
-    }
-
-    /**
-     * Create an instance of {@link DestroyVirtualLinkResponse }
-     * 
-     */
-    public DestroyVirtualLinkResponse createDestroyVirtualLinkResponse() {
-        return new DestroyVirtualLinkResponse();
-    }
-
-    /**
-     * Create an instance of {@link SetChannelPipeline }
-     * 
-     */
-    public SetChannelPipeline createSetChannelPipeline() {
-        return new SetChannelPipeline();
-    }
-
-    /**
-     * Create an instance of {@link ChannelHandlerDescription }
-     * 
-     */
-    public ChannelHandlerDescription createChannelHandlerDescription() {
-        return new ChannelHandlerDescription();
-    }
-
-    /**
      * Create an instance of {@link DisableNodeResponse }
      * 
      */
     public DisableNodeResponse createDisableNodeResponse() {
         return new DisableNodeResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetSupportedChannelHandlersResponse }
-     * 
-     */
-    public GetSupportedChannelHandlersResponse createGetSupportedChannelHandlersResponse() {
-        return new GetSupportedChannelHandlersResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetSupportedChannelHandlers }
-     * 
-     */
-    public GetSupportedChannelHandlers createGetSupportedChannelHandlers() {
-        return new GetSupportedChannelHandlers();
-    }
-
-    /**
-     * Create an instance of {@link GetVersion }
-     * 
-     */
-    public GetVersion createGetVersion() {
-        return new GetVersion();
-    }
-
-    /**
-     * Create an instance of {@link SetVirtualLink }
-     * 
-     */
-    public SetVirtualLink createSetVirtualLink() {
-        return new SetVirtualLink();
-    }
-
-    /**
-     * Create an instance of {@link ResetNodesResponse }
-     * 
-     */
-    public ResetNodesResponse createResetNodesResponse() {
-        return new ResetNodesResponse();
-    }
-
-    /**
-     * Create an instance of {@link AddController }
-     * 
-     */
-    public AddController createAddController() {
-        return new AddController();
-    }
-
-    /**
-     * Create an instance of {@link SetVirtualLinkResponse }
-     * 
-     */
-    public SetVirtualLinkResponse createSetVirtualLinkResponse() {
-        return new SetVirtualLinkResponse();
-    }
-
-    /**
-     * Create an instance of {@link Send }
-     * 
-     */
-    public Send createSend() {
-        return new Send();
-    }
-
-    /**
-     * Create an instance of {@link RemoveControllerResponse }
-     * 
-     */
-    public RemoveControllerResponse createRemoveControllerResponse() {
-        return new RemoveControllerResponse();
-    }
-
-    /**
-     * Create an instance of {@link SendResponse }
-     * 
-     */
-    public SendResponse createSendResponse() {
-        return new SendResponse();
-    }
-
-    /**
-     * Create an instance of {@link EnablePhysicalLink }
-     * 
-     */
-    public EnablePhysicalLink createEnablePhysicalLink() {
-        return new EnablePhysicalLink();
     }
 
     /**
@@ -257,19 +107,59 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link DisableNode }
+     * Create an instance of {@link RemoveControllerResponse }
      * 
      */
-    public DisableNode createDisableNode() {
-        return new DisableNode();
+    public RemoveControllerResponse createRemoveControllerResponse() {
+        return new RemoveControllerResponse();
     }
 
     /**
-     * Create an instance of {@link ResetNodes }
+     * Create an instance of {@link GetChannelPipelinesResponse }
      * 
      */
-    public ResetNodes createResetNodes() {
-        return new ResetNodes();
+    public GetChannelPipelinesResponse createGetChannelPipelinesResponse() {
+        return new GetChannelPipelinesResponse();
+    }
+
+    /**
+     * Create an instance of {@link SendResponse }
+     * 
+     */
+    public SendResponse createSendResponse() {
+        return new SendResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetFilters }
+     * 
+     */
+    public GetFilters createGetFilters() {
+        return new GetFilters();
+    }
+
+    /**
+     * Create an instance of {@link ProgramMetaData }
+     * 
+     */
+    public ProgramMetaData createProgramMetaData() {
+        return new ProgramMetaData();
+    }
+
+    /**
+     * Create an instance of {@link ChannelPipelinesMap }
+     * 
+     */
+    public ChannelPipelinesMap createChannelPipelinesMap() {
+        return new ChannelPipelinesMap();
+    }
+
+    /**
+     * Create an instance of {@link EnablePhysicalLinkResponse }
+     * 
+     */
+    public EnablePhysicalLinkResponse createEnablePhysicalLinkResponse() {
+        return new EnablePhysicalLinkResponse();
     }
 
     /**
@@ -281,14 +171,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AreNodesAliveResponse }
-     * 
-     */
-    public AreNodesAliveResponse createAreNodesAliveResponse() {
-        return new AreNodesAliveResponse();
-    }
-
-    /**
      * Create an instance of {@link AreNodesAlive }
      * 
      */
@@ -297,19 +179,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link FlashPrograms }
+     * Create an instance of {@link ChannelHandlerDescription }
      * 
      */
-    public FlashPrograms createFlashPrograms() {
-        return new FlashPrograms();
+    public ChannelHandlerDescription createChannelHandlerDescription() {
+        return new ChannelHandlerDescription();
     }
 
     /**
-     * Create an instance of {@link SetChannelPipelineResponse }
+     * Create an instance of {@link DestroyVirtualLink }
      * 
      */
-    public SetChannelPipelineResponse createSetChannelPipelineResponse() {
-        return new SetChannelPipelineResponse();
+    public DestroyVirtualLink createDestroyVirtualLink() {
+        return new DestroyVirtualLink();
+    }
+
+    /**
+     * Create an instance of {@link GetVersionResponse }
+     * 
+     */
+    public GetVersionResponse createGetVersionResponse() {
+        return new GetVersionResponse();
     }
 
     /**
@@ -329,27 +219,163 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ProgramMetaData }
+     * Create an instance of {@link AddController }
      * 
      */
-    public ProgramMetaData createProgramMetaData() {
-        return new ProgramMetaData();
+    public AddController createAddController() {
+        return new AddController();
     }
 
     /**
-     * Create an instance of {@link GetFilters }
+     * Create an instance of {@link GetChannelPipelines }
      * 
      */
-    public GetFilters createGetFilters() {
-        return new GetFilters();
+    public GetChannelPipelines createGetChannelPipelines() {
+        return new GetChannelPipelines();
     }
 
     /**
-     * Create an instance of {@link EnablePhysicalLinkResponse }
+     * Create an instance of {@link SetChannelPipeline }
      * 
      */
-    public EnablePhysicalLinkResponse createEnablePhysicalLinkResponse() {
-        return new EnablePhysicalLinkResponse();
+    public SetChannelPipeline createSetChannelPipeline() {
+        return new SetChannelPipeline();
+    }
+
+    /**
+     * Create an instance of {@link ChannelHandlerConfiguration }
+     * 
+     */
+    public ChannelHandlerConfiguration createChannelHandlerConfiguration() {
+        return new ChannelHandlerConfiguration();
+    }
+
+    /**
+     * Create an instance of {@link FlashPrograms }
+     * 
+     */
+    public FlashPrograms createFlashPrograms() {
+        return new FlashPrograms();
+    }
+
+    /**
+     * Create an instance of {@link DisableNode }
+     * 
+     */
+    public DisableNode createDisableNode() {
+        return new DisableNode();
+    }
+
+    /**
+     * Create an instance of {@link Program }
+     * 
+     */
+    public Program createProgram() {
+        return new Program();
+    }
+
+    /**
+     * Create an instance of {@link EnableNodeResponse }
+     * 
+     */
+    public EnableNodeResponse createEnableNodeResponse() {
+        return new EnableNodeResponse();
+    }
+
+    /**
+     * Create an instance of {@link SetVirtualLinkResponse }
+     * 
+     */
+    public SetVirtualLinkResponse createSetVirtualLinkResponse() {
+        return new SetVirtualLinkResponse();
+    }
+
+    /**
+     * Create an instance of {@link AreNodesAliveResponse }
+     * 
+     */
+    public AreNodesAliveResponse createAreNodesAliveResponse() {
+        return new AreNodesAliveResponse();
+    }
+
+    /**
+     * Create an instance of {@link EnablePhysicalLink }
+     * 
+     */
+    public EnablePhysicalLink createEnablePhysicalLink() {
+        return new EnablePhysicalLink();
+    }
+
+    /**
+     * Create an instance of {@link Send }
+     * 
+     */
+    public Send createSend() {
+        return new Send();
+    }
+
+    /**
+     * Create an instance of {@link ResetNodes }
+     * 
+     */
+    public ResetNodes createResetNodes() {
+        return new ResetNodes();
+    }
+
+    /**
+     * Create an instance of {@link DestroyVirtualLinkResponse }
+     * 
+     */
+    public DestroyVirtualLinkResponse createDestroyVirtualLinkResponse() {
+        return new DestroyVirtualLinkResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetSupportedChannelHandlersResponse }
+     * 
+     */
+    public GetSupportedChannelHandlersResponse createGetSupportedChannelHandlersResponse() {
+        return new GetSupportedChannelHandlersResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetVersion }
+     * 
+     */
+    public GetVersion createGetVersion() {
+        return new GetVersion();
+    }
+
+    /**
+     * Create an instance of {@link SetVirtualLink }
+     * 
+     */
+    public SetVirtualLink createSetVirtualLink() {
+        return new SetVirtualLink();
+    }
+
+    /**
+     * Create an instance of {@link DisablePhysicalLinkResponse }
+     * 
+     */
+    public DisablePhysicalLinkResponse createDisablePhysicalLinkResponse() {
+        return new DisablePhysicalLinkResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetFiltersResponse }
+     * 
+     */
+    public GetFiltersResponse createGetFiltersResponse() {
+        return new GetFiltersResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetSupportedChannelHandlers }
+     * 
+     */
+    public GetSupportedChannelHandlers createGetSupportedChannelHandlers() {
+        return new GetSupportedChannelHandlers();
     }
 
     /**
@@ -395,6 +421,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "urn:WSNService", name = "destroyVirtualLinkResponse")
     public JAXBElement<SetVirtualLinkResponse> createDestroyVirtualLinkResponse(SetVirtualLinkResponse value) {
         return new JAXBElement<SetVirtualLinkResponse>(_DestroyVirtualLinkResponse_QNAME, SetVirtualLinkResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetChannelPipelinesResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "urn:WSNService", name = "getChannelPipelinesResponse")
+    public JAXBElement<GetChannelPipelinesResponse> createGetChannelPipelinesResponse(GetChannelPipelinesResponse value) {
+        return new JAXBElement<GetChannelPipelinesResponse>(_GetChannelPipelinesResponse_QNAME, GetChannelPipelinesResponse.class, null, value);
     }
 
     /**
@@ -557,6 +592,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "urn:WSNService", name = "setChannelPipelineResponse")
     public JAXBElement<SetChannelPipelineResponse> createSetChannelPipelineResponse(SetChannelPipelineResponse value) {
         return new JAXBElement<SetChannelPipelineResponse>(_SetChannelPipelineResponse_QNAME, SetChannelPipelineResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetChannelPipelines }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "urn:WSNService", name = "getChannelPipelines")
+    public JAXBElement<GetChannelPipelines> createGetChannelPipelines(GetChannelPipelines value) {
+        return new JAXBElement<GetChannelPipelines>(_GetChannelPipelines_QNAME, GetChannelPipelines.class, null, value);
     }
 
     /**
