@@ -40,7 +40,6 @@ import eu.wisebed.api.common.UsernameUrnPrefixPair;
  */
 public class WisebedConversionHelper {
 
-	// ------------------------------------------------------------------------
 	/**
 	 * Converts a list of secret authentication keys to a list of tuples comprising user names and
 	 * urn prefixes and returns the result.
@@ -60,11 +59,10 @@ public class WisebedConversionHelper {
 		return usernamePrefixPairs;
 	}
 
-	// ------------------------------------------------------------------------
 	/**
 	 * Relates user name prefix pairs to node urns based or the node urns' prefixes and returns the
 	 * result.
-	 * 
+	 *
 	 * @param usernameUrnPrefixPairs
 	 *            A collection of tuples of user name and urn prefix. The ladder one indicates the
 	 *            user's associated testbed organization.
@@ -103,11 +101,10 @@ public class WisebedConversionHelper {
 		return mappings;
 	}
 
-	// ------------------------------------------------------------------------
 	/**
 	 * Matches secret authentication keys to related node urns based or the node urns' prefixes and
 	 * returns the result.
-	 * 
+	 *
 	 * @param secretAuthenticationKeys
 	 *            A list of secret authentication keys
 	 * @param nodeURNs
@@ -119,8 +116,7 @@ public class WisebedConversionHelper {
 	 * @see WisebedConversionHelper#convertToUsernameNodeUrnsMap(Collection, Collection)
 	 */
 	public static List<UsernameNodeUrnsMap> convertToUsernameNodeUrnsMap(final List<SecretAuthenticationKey> secretAuthenticationKeys,
-			final Collection<String> nodeURNs) throws InvalidAttributesException {
+																		 final Collection<String> nodeURNs) throws InvalidAttributesException {
 		return WisebedConversionHelper.convertToUsernameNodeUrnsMap(convert(secretAuthenticationKeys), nodeURNs);
 	}
-
 }
