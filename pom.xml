@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -8,6 +9,39 @@
 	<packaging>jar</packaging>
 	<version>3.0-SNAPSHOT</version>
 	<name>WISEBED API</name>
+
+	<properties>
+		<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.glassfish.metro</groupId>
+			<artifactId>webservices-rt</artifactId>
+			<version>2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.metro</groupId>
+			<artifactId>webservices-api</artifactId>
+			<version>2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.2.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-impl</artifactId>
+			<version>2.2.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jvnet.jaxb2_commons</groupId>
+			<artifactId>jaxb2-basics-runtime</artifactId>
+			<version>0.6.4</version>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<pluginManagement>
@@ -35,6 +69,38 @@
 			</plugins>
 		</pluginManagement>
 		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.1</version>
+				<executions>
+					<execution>
+						<phase>validate</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${endorsed.dir}</outputDirectory>
+							<silent>true</silent>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.0.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<encoding>UTF-8</encoding>
+					<compilerArguments>
+						<endorseddirs>${endorsed.dir}</endorseddirs>
+					</compilerArguments>
+				</configuration>
+			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
@@ -63,14 +129,119 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.0.2</version>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-					<encoding>UTF-8</encoding>
-				</configuration>
+				<groupId>org.jvnet.jax-ws-commons</groupId>
+				<artifactId>jaxws-maven-plugin</artifactId>
+				<version>2.2</version>
+				<dependencies>
+					<!-- put xjc-plugins on the jaxws-maven-plugin's classpath -->
+					<dependency>
+						<groupId>org.jvnet.jaxb2_commons</groupId>
+						<artifactId>jaxb2-basics</artifactId>
+						<version>0.6.4</version>
+					</dependency>
+				</dependencies>
+				<executions>
+					<execution>
+						<id>wsimport-controller</id>
+						<goals>
+							<goal>wsimport</goal>
+						</goals>
+						<configuration>
+							<wsdlFiles>
+								<wsdlFile>${project.basedir}/src/main/resources/ControllerService.wsdl</wsdlFile>
+							</wsdlFiles>
+							<bindingFiles>
+								<bindingFile>${project.basedir}/src/main/resources/CommonTypes.xjb</bindingFile>
+								<bindingFile>${project.basedir}/src/main/resources/ControllerService.xjb</bindingFile>
+								<bindingFile>${project.basedir}/src/main/resources/ControllerTypes.xjb</bindingFile>
+							</bindingFiles>
+							<xjcArgs>
+								<xjcArg>-Xequals</xjcArg>
+								<xjcArg>-XtoString</xjcArg>
+							</xjcArgs>
+						</configuration>
+					</execution>
+					<execution>
+						<id>wsimport-sm</id>
+						<goals>
+							<goal>wsimport</goal>
+						</goals>
+						<configuration>
+							<wsdlFiles>
+								<wsdlFile>${project.basedir}/src/main/resources/SessionManagementService.wsdl</wsdlFile>
+							</wsdlFiles>
+							<bindingFiles>
+								<bindingFile>${project.basedir}/src/main/resources/CommonTypes.xjb</bindingFile>
+								<bindingFile>${project.basedir}/src/main/resources/SessionManagementService.xjb</bindingFile>
+								<bindingFile>${project.basedir}/src/main/resources/SessionManagementTypes.xjb</bindingFile>
+							</bindingFiles>
+							<xjcArgs>
+								<xjcArg>-Xequals</xjcArg>
+								<xjcArg>-XtoString</xjcArg>
+							</xjcArgs>
+						</configuration>
+					</execution>
+					<execution>
+						<id>wsimport-wsn</id>
+						<goals>
+							<goal>wsimport</goal>
+						</goals>
+						<configuration>
+							<wsdlFiles>
+								<wsdlFile>${project.basedir}/src/main/resources/WSNService.wsdl</wsdlFile>
+							</wsdlFiles>
+							<bindingFiles>
+								<bindingFile>${project.basedir}/src/main/resources/CommonTypes.xjb</bindingFile>
+								<bindingFile>${project.basedir}/src/main/resources/WSNService.xjb</bindingFile>
+								<bindingFile>${project.basedir}/src/main/resources/WSNTypes.xjb</bindingFile>
+							</bindingFiles>
+							<xjcArgs>
+								<xjcArg>-Xequals</xjcArg>
+								<xjcArg>-XtoString</xjcArg>
+							</xjcArgs>
+						</configuration>
+					</execution>
+					<execution>
+						<id>wsimport-rs</id>
+						<goals>
+							<goal>wsimport</goal>
+						</goals>
+						<configuration>
+							<wsdlFiles>
+								<wsdlFile>${project.basedir}/src/main/resources/RSService.wsdl</wsdlFile>
+							</wsdlFiles>
+							<bindingFiles>
+								<bindingFile>${project.basedir}/src/main/resources/CommonTypes.xjb</bindingFile>
+								<bindingFile>${project.basedir}/src/main/resources/RSService.xjb</bindingFile>
+								<bindingFile>${project.basedir}/src/main/resources/RSTypes.xjb</bindingFile>
+							</bindingFiles>
+							<xjcArgs>
+								<xjcArg>-Xequals</xjcArg>
+								<xjcArg>-XtoString</xjcArg>
+							</xjcArgs>
+						</configuration>
+					</execution>
+					<execution>
+						<id>wsimport-snaa</id>
+						<goals>
+							<goal>wsimport</goal>
+						</goals>
+						<configuration>
+							<wsdlFiles>
+								<wsdlFile>${project.basedir}/src/main/resources/SNAA.wsdl</wsdlFile>
+							</wsdlFiles>
+							<bindingFiles>
+								<bindingFile>${project.basedir}/src/main/resources/CommonTypes.xjb</bindingFile>
+								<bindingFile>${project.basedir}/src/main/resources/SNAATypes.xjb</bindingFile>
+								<bindingFile>${project.basedir}/src/main/resources/SNAA.xjb</bindingFile>
+							</bindingFiles>
+							<xjcArgs>
+								<xjcArg>-Xequals</xjcArg>
+								<xjcArg>-XtoString</xjcArg>
+							</xjcArgs>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 		<extensions>
@@ -94,10 +265,6 @@
 			<url>scpexe://itm01.itm.uni-luebeck.de/www/wisebeds/maven/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
-
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
 
 	<scm>
 		<connection>scm:git:git@github.com:wisebed/api-java.git</connection>
