@@ -36,6 +36,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link SecretReservationKey }
+     * 
+     */
+    public SecretReservationKey createSecretReservationKey() {
+        return new SecretReservationKey();
+    }
+
+    /**
      * Create an instance of {@link SecretAuthenticationKey }
      * 
      */
@@ -44,11 +52,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetNetworkResponse }
+     * Create an instance of {@link KeyValuePair }
      * 
      */
-    public GetNetworkResponse createGetNetworkResponse() {
-        return new GetNetworkResponse();
+    public KeyValuePair createKeyValuePair() {
+        return new KeyValuePair();
     }
 
     /**
@@ -68,22 +76,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link UsernameNodeUrnsMap }
-     * 
-     */
-    public UsernameNodeUrnsMap createUsernameNodeUrnsMap() {
-        return new UsernameNodeUrnsMap();
-    }
-
-    /**
-     * Create an instance of {@link KeyValuePair }
-     * 
-     */
-    public KeyValuePair createKeyValuePair() {
-        return new KeyValuePair();
-    }
-
-    /**
      * Create an instance of {@link UsernameUrnPrefixPair }
      * 
      */
@@ -92,11 +84,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SecretReservationKey }
+     * Create an instance of {@link GetNetworkResponse }
      * 
      */
-    public SecretReservationKey createSecretReservationKey() {
-        return new SecretReservationKey();
+    public GetNetworkResponse createGetNetworkResponse() {
+        return new GetNetworkResponse();
+    }
+
+    /**
+     * Create an instance of {@link UsernameNodeUrnsMap }
+     * 
+     */
+    public UsernameNodeUrnsMap createUsernameNodeUrnsMap() {
+        return new UsernameNodeUrnsMap();
     }
 
     /**

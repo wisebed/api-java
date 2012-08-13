@@ -20,8 +20,8 @@ import eu.wisebed.api.common.Message;
  */
 @WebService(name = "WSN", targetNamespace = "urn:WSNService")
 @XmlSeeAlso({
-    eu.wisebed.api.wsn.ObjectFactory.class,
-    eu.wisebed.api.common.ObjectFactory.class
+    eu.wisebed.api.common.ObjectFactory.class,
+    eu.wisebed.api.wsn.ObjectFactory.class
 })
 public interface WSN {
 
@@ -132,9 +132,7 @@ public interface WSN {
 
     /**
      * 
-     * @param programs
-     * @param programIndices
-     * @param nodeIds
+     * @param configurations
      * @return
      *     returns java.lang.String
      */
@@ -143,12 +141,8 @@ public interface WSN {
     @RequestWrapper(localName = "flashPrograms", targetNamespace = "urn:WSNService", className = "eu.wisebed.api.wsn.FlashPrograms")
     @ResponseWrapper(localName = "flashProgramsResponse", targetNamespace = "urn:WSNService", className = "eu.wisebed.api.wsn.FlashProgramsResponse")
     public String flashPrograms(
-        @WebParam(name = "nodeIds", targetNamespace = "")
-        List<String> nodeIds,
-        @WebParam(name = "programIndices", targetNamespace = "")
-        List<Integer> programIndices,
-        @WebParam(name = "programs", targetNamespace = "")
-        List<Program> programs);
+        @WebParam(name = "configurations", targetNamespace = "")
+        List<FlashProgramsConfiguration> configurations);
 
     /**
      * 

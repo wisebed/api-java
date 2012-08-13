@@ -19,8 +19,8 @@ import eu.wisebed.api.common.Message;
  */
 @WebService(name = "Controller", targetNamespace = "urn:ControllerService")
 @XmlSeeAlso({
-    eu.wisebed.api.common.ObjectFactory.class,
-    eu.wisebed.api.controller.ObjectFactory.class
+    eu.wisebed.api.controller.ObjectFactory.class,
+    eu.wisebed.api.common.ObjectFactory.class
 })
 public interface Controller {
 

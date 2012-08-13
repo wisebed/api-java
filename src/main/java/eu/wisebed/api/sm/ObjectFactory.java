@@ -49,19 +49,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetConfiguration }
-     * 
-     */
-    public GetConfiguration createGetConfiguration() {
-        return new GetConfiguration();
-    }
-
-    /**
      * Create an instance of {@link AreNodesAlive }
      * 
      */
     public AreNodesAlive createAreNodesAlive() {
         return new AreNodesAlive();
+    }
+
+    /**
+     * Create an instance of {@link GetConfigurationResponse }
+     * 
+     */
+    public GetConfigurationResponse createGetConfigurationResponse() {
+        return new GetConfigurationResponse();
     }
 
     /**
@@ -73,14 +73,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetInstanceResponse }
-     * 
-     */
-    public GetInstanceResponse createGetInstanceResponse() {
-        return new GetInstanceResponse();
-    }
-
-    /**
      * Create an instance of {@link AreNodesAliveResponse }
      * 
      */
@@ -89,11 +81,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetConfigurationResponse }
+     * Create an instance of {@link GetConfiguration }
      * 
      */
-    public GetConfigurationResponse createGetConfigurationResponse() {
-        return new GetConfigurationResponse();
+    public GetConfiguration createGetConfiguration() {
+        return new GetConfiguration();
+    }
+
+    /**
+     * Create an instance of {@link GetInstanceResponse }
+     * 
+     */
+    public GetInstanceResponse createGetInstanceResponse() {
+        return new GetInstanceResponse();
     }
 
     /**

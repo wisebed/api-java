@@ -19,9 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="nodeIds" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/>
- *         &lt;element name="programIndices" type="{http://www.w3.org/2001/XMLSchema}int" maxOccurs="unbounded"/>
- *         &lt;element name="programs" type="{urn:WSNService}program" maxOccurs="unbounded"/>
+ *         &lt;element name="configurations" type="{urn:WSNService}FlashProgramsConfiguration" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -32,104 +30,40 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "flashPrograms", propOrder = {
-    "nodeIds",
-    "programIndices",
-    "programs"
+    "configurations"
 })
 public class FlashPrograms {
 
     @XmlElement(required = true)
-    protected List<String> nodeIds;
-    @XmlElement(type = Integer.class)
-    protected List<Integer> programIndices;
-    @XmlElement(required = true)
-    protected List<Program> programs;
+    protected List<FlashProgramsConfiguration> configurations;
 
     /**
-     * Gets the value of the nodeIds property.
+     * Gets the value of the configurations property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the nodeIds property.
+     * This is why there is not a <CODE>set</CODE> method for the configurations property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getNodeIds().add(newItem);
+     *    getConfigurations().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link String }
+     * {@link FlashProgramsConfiguration }
      * 
      * 
      */
-    public List<String> getNodeIds() {
-        if (nodeIds == null) {
-            nodeIds = new ArrayList<String>();
+    public List<FlashProgramsConfiguration> getConfigurations() {
+        if (configurations == null) {
+            configurations = new ArrayList<FlashProgramsConfiguration>();
         }
-        return this.nodeIds;
-    }
-
-    /**
-     * Gets the value of the programIndices property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the programIndices property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getProgramIndices().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Integer }
-     * 
-     * 
-     */
-    public List<Integer> getProgramIndices() {
-        if (programIndices == null) {
-            programIndices = new ArrayList<Integer>();
-        }
-        return this.programIndices;
-    }
-
-    /**
-     * Gets the value of the programs property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the programs property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getPrograms().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Program }
-     * 
-     * 
-     */
-    public List<Program> getPrograms() {
-        if (programs == null) {
-            programs = new ArrayList<Program>();
-        }
-        return this.programs;
+        return this.configurations;
     }
 
 }
