@@ -41,6 +41,11 @@
 			<artifactId>jaxb2-basics-runtime</artifactId>
 			<version>0.6.4</version>
 		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -173,8 +178,10 @@
 							</wsdlFiles>
 							<bindingFiles>
 								<bindingFile>${project.basedir}/src/main/resources/CommonTypes.xjb</bindingFile>
-								<bindingFile>${project.basedir}/src/main/resources/SessionManagementService.xjb</bindingFile>
-								<bindingFile>${project.basedir}/src/main/resources/SessionManagementTypes.xjb</bindingFile>
+								<bindingFile>${project.basedir}/src/main/resources/SessionManagementService.xjb
+								</bindingFile>
+								<bindingFile>${project.basedir}/src/main/resources/SessionManagementTypes.xjb
+								</bindingFile>
 							</bindingFiles>
 							<xjcArgs>
 								<xjcArg>-Xequals</xjcArg>
