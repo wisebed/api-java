@@ -62,15 +62,12 @@
         </xs:sequence>
     </xs:complexType>
 
-
     <xs:complexType name="AuthorizationResponse">
         <xs:sequence>
             <xs:element name="authorized" type="xs:boolean" />
             <xs:element name="message" type="xs:string" minOccurs="0" maxOccurs="1" />
         </xs:sequence>
     </xs:complexType>
-
-
 
     <xs:complexType name="isValid">
         <xs:sequence>
