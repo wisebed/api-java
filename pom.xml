@@ -157,6 +157,7 @@
 							</bindingFiles>
 							<xjcArgs>
 								<xjcArg>-Xequals</xjcArg>
+								<xjcArg>-XhashCode</xjcArg>
 								<xjcArg>-XtoString</xjcArg>
 							</xjcArgs>
 						</configuration>
@@ -177,6 +178,7 @@
 							</bindingFiles>
 							<xjcArgs>
 								<xjcArg>-Xequals</xjcArg>
+								<xjcArg>-XhashCode</xjcArg>
 								<xjcArg>-XtoString</xjcArg>
 							</xjcArgs>
 						</configuration>
@@ -197,6 +199,7 @@
 							</bindingFiles>
 							<xjcArgs>
 								<xjcArg>-Xequals</xjcArg>
+								<xjcArg>-XhashCode</xjcArg>
 								<xjcArg>-XtoString</xjcArg>
 							</xjcArgs>
 						</configuration>
@@ -217,6 +220,7 @@
 							</bindingFiles>
 							<xjcArgs>
 								<xjcArg>-Xequals</xjcArg>
+								<xjcArg>-XhashCode</xjcArg>
 								<xjcArg>-XtoString</xjcArg>
 							</xjcArgs>
 						</configuration>
@@ -237,6 +241,7 @@
 							</bindingFiles>
 							<xjcArgs>
 								<xjcArg>-Xequals</xjcArg>
+								<xjcArg>-XhashCode</xjcArg>
 								<xjcArg>-XtoString</xjcArg>
 							</xjcArgs>
 						</configuration>
