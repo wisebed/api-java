@@ -33,6 +33,7 @@ import eu.wisebed.api.snaa.SNAAService;
 import eu.wisebed.api.wsn.WSN;
 import eu.wisebed.api.wsn.WSNService;
 
+import javax.xml.namespace.QName;
 import javax.xml.ws.BindingProvider;
 import java.io.*;
 import java.net.MalformedURLException;
@@ -99,15 +100,18 @@ public class WisebedServiceHelper {
 
 		RSService service;
 		try {
-			service = new RSService(tmpFileRS.toURI().toURL());
+			service = new RSService(
+					tmpFileRS.toURI().toURL(),
+					new QName("urn:RSService", "RSService")
+			);
 		} catch (MalformedURLException e) {
 			throw new RuntimeException(e);
 		}
 
 		RS rsPort = service.getRSPort();
 
-		Map<String, Object> ctxt = ((BindingProvider) rsPort).getRequestContext();
-		ctxt.put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, endpointUrl);
+		Map<String, Object> context = ((BindingProvider) rsPort).getRequestContext();
+		context.put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, endpointUrl);
 
 		return rsPort;
 
@@ -142,14 +146,14 @@ public class WisebedServiceHelper {
 
 		SNAAService service;
 		try {
-			service = new SNAAService(tmpFileSNAA.toURI().toURL());
+			service = new SNAAService(tmpFileSNAA.toURI().toURL(), new QName("http://testbed.wisebed.eu/api/snaa/v1/", "SNAAService"));
 		} catch (MalformedURLException e) {
 			throw new RuntimeException(e);
 		}
 		SNAA snaaPort = service.getSNAAPort();
 
-		Map<String, Object> ctxt = ((BindingProvider) snaaPort).getRequestContext();
-		ctxt.put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, endpointUrl);
+		Map<String, Object> context = ((BindingProvider) snaaPort).getRequestContext();
+		context.put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, endpointUrl);
 
 		return snaaPort;
 	}
@@ -182,7 +186,10 @@ public class WisebedServiceHelper {
 
 		SessionManagementService service;
 		try {
-			service = new SessionManagementService(tmpFileSessionManagement.toURI().toURL());
+			service = new SessionManagementService(
+					tmpFileSessionManagement.toURI().toURL(),
+					new QName("urn:SessionManagementService", "SessionManagementService")
+			);
 		} catch (MalformedURLException e) {
 			throw new RuntimeException(e);
 		}
@@ -216,7 +223,10 @@ public class WisebedServiceHelper {
 
 		ControllerService service;
 		try {
-			service = new ControllerService(tmpFileController.toURI().toURL());
+			service = new ControllerService(
+					tmpFileController.toURI().toURL(),
+					new QName("urn:ControllerService", "ControllerService")
+			);
 		} catch (MalformedURLException e) {
 			throw new RuntimeException(e);
 		}
@@ -232,18 +242,6 @@ public class WisebedServiceHelper {
 
 		return controllerPort;
 
-	}
-
-	/**
-	 * Returns the port to the Controller API.
-	 *
-	 * @param endpointUrl
-	 * 		the endpoint URL to connect to
-	 *
-	 * @return a {@link Controller} instance that is connected to the Web Service endpoint
-	 */
-	public static Controller getControllerService(String endpointUrl) {
-		return getControllerService(endpointUrl, null);
 	}
 
 	/**
@@ -273,7 +271,10 @@ public class WisebedServiceHelper {
 
 		WSNService service;
 		try {
-			service = new WSNService(tmpFileWSN.toURI().toURL());
+			service = new WSNService(
+					tmpFileWSN.toURI().toURL(),
+					new QName("urn:WSNService", "WSNService")
+			);
 		} catch (MalformedURLException e) {
 			throw new RuntimeException(e);
 		}

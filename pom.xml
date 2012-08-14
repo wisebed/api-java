@@ -11,40 +11,14 @@
 	<name>WISEBED API</name>
 
 	<properties>
-		<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.glassfish.metro</groupId>
-			<artifactId>webservices-rt</artifactId>
-			<version>2.2</version>
-		</dependency>
-		<dependency>
-			<groupId>org.glassfish.metro</groupId>
-			<artifactId>webservices-api</artifactId>
-			<version>2.2</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.xml.bind</groupId>
-			<artifactId>jaxb-api</artifactId>
-			<version>2.2.6</version>
-		</dependency>
-		<dependency>
-			<groupId>com.sun.xml.bind</groupId>
-			<artifactId>jaxb-impl</artifactId>
-			<version>2.2.6</version>
-		</dependency>
-		<dependency>
 			<groupId>org.jvnet.jaxb2_commons</groupId>
 			<artifactId>jaxb2-basics-runtime</artifactId>
 			<version>0.6.4</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
 		</dependency>
 	</dependencies>
 
@@ -74,24 +48,6 @@
 			</plugins>
 		</pluginManagement>
 		<plugins>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<version>2.1</version>
-				<executions>
-					<execution>
-						<phase>validate</phase>
-						<goals>
-							<goal>copy-dependencies</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${endorsed.dir}</outputDirectory>
-							<silent>true</silent>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -100,12 +56,8 @@
 					<source>1.6</source>
 					<target>1.6</target>
 					<encoding>UTF-8</encoding>
-					<compilerArguments>
-						<endorseddirs>${endorsed.dir}</endorseddirs>
-					</compilerArguments>
 				</configuration>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
@@ -138,7 +90,6 @@
 				<artifactId>jaxws-maven-plugin</artifactId>
 				<version>2.2</version>
 				<dependencies>
-					<!-- put xjc-plugins on the jaxws-maven-plugin's classpath -->
 					<dependency>
 						<groupId>org.jvnet.jaxb2_commons</groupId>
 						<artifactId>jaxb2-basics</artifactId>
@@ -152,6 +103,7 @@
 							<goal>wsimport</goal>
 						</goals>
 						<configuration>
+							<target>2.1</target>
 							<wsdlFiles>
 								<wsdlFile>${project.basedir}/src/main/resources/ControllerService.wsdl</wsdlFile>
 							</wsdlFiles>
@@ -173,6 +125,7 @@
 							<goal>wsimport</goal>
 						</goals>
 						<configuration>
+							<target>2.1</target>
 							<wsdlFiles>
 								<wsdlFile>${project.basedir}/src/main/resources/SessionManagementService.wsdl</wsdlFile>
 							</wsdlFiles>
@@ -196,6 +149,7 @@
 							<goal>wsimport</goal>
 						</goals>
 						<configuration>
+							<target>2.1</target>
 							<wsdlFiles>
 								<wsdlFile>${project.basedir}/src/main/resources/WSNService.wsdl</wsdlFile>
 							</wsdlFiles>
@@ -217,6 +171,7 @@
 							<goal>wsimport</goal>
 						</goals>
 						<configuration>
+							<target>2.1</target>
 							<wsdlFiles>
 								<wsdlFile>${project.basedir}/src/main/resources/RSService.wsdl</wsdlFile>
 							</wsdlFiles>
@@ -238,6 +193,7 @@
 							<goal>wsimport</goal>
 						</goals>
 						<configuration>
+							<target>2.1</target>
 							<wsdlFiles>
 								<wsdlFile>${project.basedir}/src/main/resources/SNAA.wsdl</wsdlFile>
 							</wsdlFiles>
