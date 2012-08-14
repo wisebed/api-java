@@ -125,7 +125,7 @@ public class WisebedServiceHelper {
 	public static SNAA getSNAAService(String endpointUrl) {
 
 		InputStream resourceStream =
-				WisebedServiceHelper.class.getClassLoader().getResourceAsStream("SNAAService.wsdl");
+				WisebedServiceHelper.class.getClassLoader().getResourceAsStream("SNAA.wsdl");
 
 		tmpFileSNAALock.lock();
 		try {
