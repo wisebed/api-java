@@ -146,7 +146,9 @@ public class WisebedServiceHelper {
 
 		SNAAService service;
 		try {
-			service = new SNAAService(tmpFileSNAA.toURI().toURL(), new QName("http://testbed.wisebed.eu/api/snaa/v1/", "SNAAService"));
+			service = new SNAAService(tmpFileSNAA.toURI().toURL(),
+					new QName("http://testbed.wisebed.eu/api/snaa/v1/", "SNAAService")
+			);
 		} catch (MalformedURLException e) {
 			throw new RuntimeException(e);
 		}
@@ -287,21 +289,21 @@ public class WisebedServiceHelper {
 		return wsnPort;
 	}
 
-	public static ExperimentNotRunningException_Exception createExperimentNotRunningException(String msg,
-																							  Exception e) {
-		ExperimentNotRunningException exception = new ExperimentNotRunningException();
+	public static ExperimentNotRunningFault_Exception createExperimentNotRunningException(String msg,
+																						  Exception e) {
+		ExperimentNotRunningFault exception = new ExperimentNotRunningFault();
 		exception.setMessage(msg);
-		return new ExperimentNotRunningException_Exception(msg, exception, e);
+		return new ExperimentNotRunningFault_Exception(msg, exception, e);
 	}
 
-	public static UnknownReservationIdException_Exception createUnknownReservationIdException(String msg,
-																							  String reservationId,
-																							  Exception e) {
+	public static UnknownReservationIdFault_Exception createUnknownReservationIdException(String msg,
+																						  String reservationId,
+																						  Exception e) {
 
-		UnknownReservationIdException exception = new UnknownReservationIdException();
+		UnknownReservationIdFault exception = new UnknownReservationIdFault();
 		exception.setMessage(msg);
 		exception.setReservationId(reservationId);
-		return new UnknownReservationIdException_Exception(msg, exception, e);
+		return new UnknownReservationIdFault_Exception(msg, exception, e);
 	}
 
 	private static File copyToTmpFile(InputStream in, String prefix, String suffix) throws IOException {
