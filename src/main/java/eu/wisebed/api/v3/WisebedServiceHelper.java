@@ -83,7 +83,7 @@ public class WisebedServiceHelper {
 	 */
 	public static RS getRSService(String endpointUrl) {
 
-		InputStream resourceStream = WisebedServiceHelper.class.getClassLoader().getResourceAsStream("RSService.wsdl");
+		InputStream resourceStream = WisebedServiceHelper.class.getClassLoader().getResourceAsStream("RS.wsdl");
 
 		tmpFileRSLock.lock();
 		try {
@@ -171,7 +171,7 @@ public class WisebedServiceHelper {
 	public static SessionManagement getSessionManagementService(String endpointUrl) {
 
 		InputStream resourceStream =
-				WisebedServiceHelper.class.getClassLoader().getResourceAsStream("SessionManagementService.wsdl");
+				WisebedServiceHelper.class.getClassLoader().getResourceAsStream("SM.wsdl");
 
 		tmpFileSessionManagementLock.lock();
 		try {
@@ -208,7 +208,7 @@ public class WisebedServiceHelper {
 	public static Controller getControllerService(String endpointUrl, ExecutorService executorService) {
 
 		InputStream resourceStream =
-				WisebedServiceHelper.class.getClassLoader().getResourceAsStream("ControllerService.wsdl");
+				WisebedServiceHelper.class.getClassLoader().getResourceAsStream("Controller.wsdl");
 
 		tmpFileControllerLock.lock();
 		try {
@@ -256,7 +256,7 @@ public class WisebedServiceHelper {
 	 */
 	public static WSN getWSNService(String endpointUrl) {
 
-		InputStream resourceStream = WisebedServiceHelper.class.getClassLoader().getResourceAsStream("WSNService.wsdl");
+		InputStream resourceStream = WisebedServiceHelper.class.getClassLoader().getResourceAsStream("WSN.wsdl");
 
 		tmpFileWSNLock.lock();
 		try {
