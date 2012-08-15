@@ -21,7 +21,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                                *
  **********************************************************************************************************************/
 
-package eu.wisebed.api.util;
+package eu.wisebed.api.v3.util;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -31,9 +31,9 @@ import java.util.Set;
 
 import javax.naming.directory.InvalidAttributesException;
 
-import eu.wisebed.api.common.SecretAuthenticationKey;
-import eu.wisebed.api.common.UsernameNodeUrnsMap;
-import eu.wisebed.api.common.UsernameUrnPrefixPair;
+import eu.wisebed.api.v3.common.SecretAuthenticationKey;
+import eu.wisebed.api.v3.common.UsernameNodeUrnsMap;
+import eu.wisebed.api.v3.common.UsernameUrnPrefixPair;
 
 /**
  * Small helper class to convert between two or more API types

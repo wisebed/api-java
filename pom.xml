@@ -105,13 +105,8 @@
 						<configuration>
 							<target>2.1</target>
 							<wsdlFiles>
-								<wsdlFile>${project.basedir}/src/main/resources/ControllerService.wsdl</wsdlFile>
+								<wsdlFile>${project.basedir}/src/main/resources/Controller.wsdl</wsdlFile>
 							</wsdlFiles>
-							<bindingFiles>
-								<bindingFile>${project.basedir}/src/main/resources/CommonTypes.xjb</bindingFile>
-								<bindingFile>${project.basedir}/src/main/resources/ControllerService.xjb</bindingFile>
-								<bindingFile>${project.basedir}/src/main/resources/ControllerTypes.xjb</bindingFile>
-							</bindingFiles>
 							<xjcArgs>
 								<xjcArg>-Xequals</xjcArg>
 								<xjcArg>-XhashCode</xjcArg>
@@ -127,15 +122,8 @@
 						<configuration>
 							<target>2.1</target>
 							<wsdlFiles>
-								<wsdlFile>${project.basedir}/src/main/resources/SessionManagementService.wsdl</wsdlFile>
+								<wsdlFile>${project.basedir}/src/main/resources/SM.wsdl</wsdlFile>
 							</wsdlFiles>
-							<bindingFiles>
-								<bindingFile>${project.basedir}/src/main/resources/CommonTypes.xjb</bindingFile>
-								<bindingFile>${project.basedir}/src/main/resources/SessionManagementService.xjb
-								</bindingFile>
-								<bindingFile>${project.basedir}/src/main/resources/SessionManagementTypes.xjb
-								</bindingFile>
-							</bindingFiles>
 							<xjcArgs>
 								<xjcArg>-Xequals</xjcArg>
 								<xjcArg>-XhashCode</xjcArg>
@@ -151,13 +139,8 @@
 						<configuration>
 							<target>2.1</target>
 							<wsdlFiles>
-								<wsdlFile>${project.basedir}/src/main/resources/WSNService.wsdl</wsdlFile>
+								<wsdlFile>${project.basedir}/src/main/resources/WSN.wsdl</wsdlFile>
 							</wsdlFiles>
-							<bindingFiles>
-								<bindingFile>${project.basedir}/src/main/resources/CommonTypes.xjb</bindingFile>
-								<bindingFile>${project.basedir}/src/main/resources/WSNService.xjb</bindingFile>
-								<bindingFile>${project.basedir}/src/main/resources/WSNTypes.xjb</bindingFile>
-							</bindingFiles>
 							<xjcArgs>
 								<xjcArg>-Xequals</xjcArg>
 								<xjcArg>-XhashCode</xjcArg>
@@ -173,13 +156,8 @@
 						<configuration>
 							<target>2.1</target>
 							<wsdlFiles>
-								<wsdlFile>${project.basedir}/src/main/resources/RSService.wsdl</wsdlFile>
+								<wsdlFile>${project.basedir}/src/main/resources/RS.wsdl</wsdlFile>
 							</wsdlFiles>
-							<bindingFiles>
-								<bindingFile>${project.basedir}/src/main/resources/CommonTypes.xjb</bindingFile>
-								<bindingFile>${project.basedir}/src/main/resources/RSService.xjb</bindingFile>
-								<bindingFile>${project.basedir}/src/main/resources/RSTypes.xjb</bindingFile>
-							</bindingFiles>
 							<xjcArgs>
 								<xjcArg>-Xequals</xjcArg>
 								<xjcArg>-XhashCode</xjcArg>
@@ -197,11 +175,6 @@
 							<wsdlFiles>
 								<wsdlFile>${project.basedir}/src/main/resources/SNAA.wsdl</wsdlFile>
 							</wsdlFiles>
-							<bindingFiles>
-								<bindingFile>${project.basedir}/src/main/resources/CommonTypes.xjb</bindingFile>
-								<bindingFile>${project.basedir}/src/main/resources/SNAATypes.xjb</bindingFile>
-								<bindingFile>${project.basedir}/src/main/resources/SNAA.xjb</bindingFile>
-							</bindingFiles>
 							<xjcArgs>
 								<xjcArg>-Xequals</xjcArg>
 								<xjcArg>-XhashCode</xjcArg>

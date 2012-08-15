@@ -21,17 +21,17 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                                *
  **********************************************************************************************************************/
 
-package eu.wisebed.api;
+package eu.wisebed.api.v3;
 
-import eu.wisebed.api.controller.Controller;
-import eu.wisebed.api.controller.ControllerService;
-import eu.wisebed.api.rs.RS;
-import eu.wisebed.api.rs.RSService;
-import eu.wisebed.api.sm.*;
-import eu.wisebed.api.snaa.SNAA;
-import eu.wisebed.api.snaa.SNAAService;
-import eu.wisebed.api.wsn.WSN;
-import eu.wisebed.api.wsn.WSNService;
+import eu.wisebed.api.v3.controller.Controller;
+import eu.wisebed.api.v3.controller.ControllerService;
+import eu.wisebed.api.v3.rs.RS;
+import eu.wisebed.api.v3.rs.RSService;
+import eu.wisebed.api.v3.sm.*;
+import eu.wisebed.api.v3.snaa.SNAA;
+import eu.wisebed.api.v3.snaa.SNAAService;
+import eu.wisebed.api.v3.wsn.WSN;
+import eu.wisebed.api.v3.wsn.WSNService;
 
 import javax.xml.namespace.QName;
 import javax.xml.ws.BindingProvider;
@@ -78,7 +78,7 @@ public class WisebedServiceHelper {
 	 * @param endpointUrl
 	 * 		the endpoint URL to connect to
 	 *
-	 * @return a {@link eu.wisebed.api.rs.RS} instance that is
+	 * @return a {@link eu.wisebed.api.v3.rs.RS} instance that is
 	 *         connected to the Web Service endpoint
 	 */
 	public static RS getRSService(String endpointUrl) {
@@ -123,7 +123,7 @@ public class WisebedServiceHelper {
 	 * @param endpointUrl
 	 * 		the endpoint URL to connect to
 	 *
-	 * @return a {@link eu.wisebed.api.snaa.SNAA} instance that is
+	 * @return a {@link eu.wisebed.api.v3.snaa.SNAA} instance that is
 	 *         connected to the Web Service endpoint
 	 */
 	public static SNAA getSNAAService(String endpointUrl) {
@@ -164,7 +164,7 @@ public class WisebedServiceHelper {
 	 * @param endpointUrl
 	 * 		the endpoint URL to connect to
 	 *
-	 * @return a {@link eu.wisebed.api.sm.SessionManagement} instance that is connected to the Web Service endpoint
+	 * @return a {@link eu.wisebed.api.v3.sm.SessionManagement} instance that is connected to the Web Service endpoint
 	 */
 	public static SessionManagement getSessionManagementService(String endpointUrl) {
 
