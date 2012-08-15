@@ -102,7 +102,7 @@ public class WisebedServiceHelper {
 		try {
 			service = new RSService(
 					tmpFileRS.toURI().toURL(),
-					new QName("urn:RSService", "RSService")
+					new QName("http://wisebed.eu/api/v3/rs", "RSService")
 			);
 		} catch (MalformedURLException e) {
 			throw new RuntimeException(e);
@@ -147,7 +147,7 @@ public class WisebedServiceHelper {
 		SNAAService service;
 		try {
 			service = new SNAAService(tmpFileSNAA.toURI().toURL(),
-					new QName("http://testbed.wisebed.eu/api/snaa/v1/", "SNAAService")
+					new QName("http://wisebed.eu/api/v3/snaa", "SNAAService")
 			);
 		} catch (MalformedURLException e) {
 			throw new RuntimeException(e);
@@ -190,7 +190,7 @@ public class WisebedServiceHelper {
 		try {
 			service = new SessionManagementService(
 					tmpFileSessionManagement.toURI().toURL(),
-					new QName("urn:SessionManagementService", "SessionManagementService")
+					new QName("http://wisebed.eu/api/v3/sm", "SessionManagementService")
 			);
 		} catch (MalformedURLException e) {
 			throw new RuntimeException(e);
@@ -227,7 +227,7 @@ public class WisebedServiceHelper {
 		try {
 			service = new ControllerService(
 					tmpFileController.toURI().toURL(),
-					new QName("urn:ControllerService", "ControllerService")
+					new QName("http://wisebed.eu/api/v3/controller", "ControllerService")
 			);
 		} catch (MalformedURLException e) {
 			throw new RuntimeException(e);
@@ -275,7 +275,7 @@ public class WisebedServiceHelper {
 		try {
 			service = new WSNService(
 					tmpFileWSN.toURI().toURL(),
-					new QName("urn:WSNService", "WSNService")
+					new QName("http://wisebed.eu/api/v3/wsn", "WSNService")
 			);
 		} catch (MalformedURLException e) {
 			throw new RuntimeException(e);
