@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jxb:bindings version="2.1"
+			  xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+			  xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+			  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<jxb:globalBindings>
+		<xjc:javaType name="org.joda.time.DateTime"
+					  xmlType="xs:dateTime"
+					  adapter="eu.wisebed.api.v3.util.DateTimeAdapter" />
+		<xjc:javaType name="eu.wisebed.api.v3.common.NodeUrn"
+					  xmlType="common:NodeUrn"
+					  adapter="eu.wisebed.api.v3.util.NodeUrnAdapter" xmlns:common="http://wisebed.eu/api/v3/common"/>
+		<xjc:javaType name="eu.wisebed.api.v3.common.NodeUrnPrefix"
+					  xmlType="common:NodeUrnPrefix"
+					  adapter="eu.wisebed.api.v3.util.NodeUrnPrefixAdapter" xmlns:common="http://wisebed.eu/api/v3/common"/>
+	</jxb:globalBindings>
+
+</jxb:bindings>

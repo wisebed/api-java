@@ -23,17 +23,13 @@
 
 package eu.wisebed.api.v3.util;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
-
-import javax.naming.directory.InvalidAttributesException;
-
+import eu.wisebed.api.v3.common.NodeUrn;
 import eu.wisebed.api.v3.common.SecretAuthenticationKey;
 import eu.wisebed.api.v3.common.UsernameNodeUrnsMap;
 import eu.wisebed.api.v3.common.UsernameUrnPrefixPair;
+
+import javax.naming.directory.InvalidAttributesException;
+import java.util.*;
 
 /**
  * Small helper class to convert between two or more API types
@@ -43,9 +39,10 @@ public class WisebedConversionHelper {
 	/**
 	 * Converts a list of secret authentication keys to a list of tuples comprising user names and
 	 * urn prefixes and returns the result.
-	 * 
+	 *
 	 * @param secretAuthenticationKeys
-	 *            A list of secret authentication keys
+	 * 		A list of secret authentication keys
+	 *
 	 * @return A list of tuples comprising user names and urn prefixes
 	 */
 	public static List<UsernameUrnPrefixPair> convert(final List<SecretAuthenticationKey> secretAuthenticationKeys) {
@@ -64,36 +61,42 @@ public class WisebedConversionHelper {
 	 * result.
 	 *
 	 * @param usernameUrnPrefixPairs
-	 *            A collection of tuples of user name and urn prefix. The ladder one indicates the
-	 *            user's associated testbed organization.
+	 * 		A collection of tuples of user name and urn prefix. The ladder one indicates the
+	 * 		user's associated testbed organization.
 	 * @param nodeURNs
-	 *            A collection of node urns
+	 * 		A collection of node urns
+	 *
 	 * @return A list of associations between tuples of user names and urn prefixes and node urns.
+	 *
 	 * @throws InvalidAttributesException
-	 *             Thrown if two tuples of user names and urn prefixes share an urn prefix.
+	 * 		Thrown if two tuples of user names and urn prefixes share an urn prefix.
 	 */
-	public static List<UsernameNodeUrnsMap> convertToUsernameNodeUrnsMap(final Collection<UsernameUrnPrefixPair> usernameUrnPrefixPairs,
-			final Collection<String> nodeURNs) throws InvalidAttributesException {
+	public static List<UsernameNodeUrnsMap> convertToUsernameNodeUrnsMap(
+			final Collection<UsernameUrnPrefixPair> usernameUrnPrefixPairs,
+			final Collection<NodeUrn> nodeURNs) throws InvalidAttributesException {
 
 		/*
 		 * Check whether two tuples of user names and urn prefixes share an urn prefix
 		 */
 		Set<String> prefixes = new HashSet<String>();
-		for (UsernameUrnPrefixPair unpp : usernameUrnPrefixPairs) {
-			if (!prefixes.add(unpp.getUrnPrefix())) {
-				throw new InvalidAttributesException("The node urn prefix '" + unpp.getUrnPrefix() + "' is associated to multiple user names.");
+		for (UsernameUrnPrefixPair usernameUrnPrefixPair : usernameUrnPrefixPairs) {
+			if (!prefixes.add(usernameUrnPrefixPair.getUrnPrefix().toString())) {
+				throw new InvalidAttributesException("The node urn prefix '"
+						+ usernameUrnPrefixPair.getUrnPrefix()
+						+ "' is associated to multiple user names."
+				);
 			}
 		}
 
 		List<UsernameNodeUrnsMap> mappings = new LinkedList<UsernameNodeUrnsMap>();
-		for (UsernameUrnPrefixPair unpp : usernameUrnPrefixPairs) {
+		for (UsernameUrnPrefixPair usernameUrnPrefixPair : usernameUrnPrefixPairs) {
 
 			UsernameNodeUrnsMap map = new UsernameNodeUrnsMap();
 			mappings.add(map);
 
-			map.setUsername(unpp);
-			for (String nodeUrn : nodeURNs) {
-				if (nodeUrn.startsWith(unpp.getUrnPrefix())) {
+			map.setUsername(usernameUrnPrefixPair);
+			for (NodeUrn nodeUrn : nodeURNs) {
+				if (nodeUrn.belongsTo(usernameUrnPrefixPair.getUrnPrefix())) {
 					map.getNodeUrns().add(nodeUrn);
 				}
 			}
@@ -106,17 +109,20 @@ public class WisebedConversionHelper {
 	 * returns the result.
 	 *
 	 * @param secretAuthenticationKeys
-	 *            A list of secret authentication keys
+	 * 		A list of secret authentication keys
 	 * @param nodeURNs
-	 *            A collection of node urns
+	 * 		A collection of node urns
+	 *
 	 * @return A list of associations between tuples of user names and urn prefixes and node urns.
+	 *
 	 * @throws InvalidAttributesException
-	 *             Thrown if the matching cannot be performed due to ambigious user data
+	 * 		Thrown if the matching cannot be performed due to ambiguous user data
 	 * @see WisebedConversionHelper#convert(List)
 	 * @see WisebedConversionHelper#convertToUsernameNodeUrnsMap(Collection, Collection)
 	 */
-	public static List<UsernameNodeUrnsMap> convertToUsernameNodeUrnsMap(final List<SecretAuthenticationKey> secretAuthenticationKeys,
-																		 final Collection<String> nodeURNs) throws InvalidAttributesException {
-		return WisebedConversionHelper.convertToUsernameNodeUrnsMap(convert(secretAuthenticationKeys), nodeURNs);
+	public static List<UsernameNodeUrnsMap> convertToUsernameNodeUrnsMap(
+			final List<SecretAuthenticationKey> secretAuthenticationKeys,
+			final Collection<NodeUrn> nodeURNs) throws InvalidAttributesException {
+		return convertToUsernameNodeUrnsMap(convert(secretAuthenticationKeys), nodeURNs);
 	}
 }
