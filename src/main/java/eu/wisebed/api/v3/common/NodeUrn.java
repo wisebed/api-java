@@ -18,11 +18,13 @@ public class NodeUrn {
 		}
 
 		if (!URN_PATTERN.matcher(nodeUrn).matches()) {
-			throw new IllegalArgumentException("Parameter nodeUrn is not a valid URN");
+			throw new IllegalArgumentException("Parameter nodeUrn (\"" + nodeUrn + "\") is not a valid URN");
 		}
 
 		if (!hasHexOrDecLongUrnSuffix(nodeUrn)) {
-			throw new IllegalArgumentException("Parameter nodeUrn must have a decimal or hexadecimal suffix");
+			throw new IllegalArgumentException(
+					"Parameter nodeUrn (\"" + nodeUrn + "\") must have a decimal or hexadecimal suffix"
+			);
 		}
 
 		this.nodeUrn = nodeUrn.toLowerCase();
