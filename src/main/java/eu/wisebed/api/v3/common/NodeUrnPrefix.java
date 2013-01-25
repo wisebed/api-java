@@ -1,8 +1,9 @@
 package eu.wisebed.api.v3.common;
 
+import java.io.Serializable;
 import java.util.regex.Pattern;
 
-public class NodeUrnPrefix {
+public class NodeUrnPrefix implements Serializable {
 
 	public final static Pattern URN_PREFIX_PATTERN = Pattern.compile(
 			"^urn:[a-zA-Z0-9][a-zA-Z0-9-]{0,31}((:([a-zA-Z0-9()+,.:=@;$_!*'-]|%[0-9A-Fa-f]{2})+):|:)$",
