@@ -23,6 +23,7 @@
 
 package eu.wisebed.api.v3;
 
+import eu.wisebed.api.v3.common.SecretReservationKey;
 import eu.wisebed.api.v3.controller.Controller;
 import eu.wisebed.api.v3.controller.ControllerService;
 import eu.wisebed.api.v3.rs.RS;
@@ -296,14 +297,14 @@ public class WisebedServiceHelper {
 		return new ExperimentNotRunningFault_Exception(msg, exception, e);
 	}
 
-	public static UnknownReservationIdFault_Exception createUnknownReservationIdException(String msg,
-																						  String reservationId,
-																						  Exception e) {
+	public static UnknownSecretReservationKeyFault_Exception createUnknownSecretReservationKeyFault(String msg,
+																									SecretReservationKey srk,
+																									Exception e) {
 
-		UnknownReservationIdFault exception = new UnknownReservationIdFault();
+		UnknownSecretReservationKeyFault exception = new UnknownSecretReservationKeyFault();
 		exception.setMessage(msg);
-		exception.setReservationId(reservationId);
-		return new UnknownReservationIdFault_Exception(msg, exception, e);
+		exception.setSecretReservationKey(srk);
+		return new UnknownSecretReservationKeyFault_Exception(msg, exception, e);
 	}
 
 	private static File copyToTmpFile(InputStream in, String prefix, String suffix) throws IOException {
