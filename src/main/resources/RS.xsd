@@ -56,11 +56,6 @@
 			<xs:element name="secretReservationKey" type="common:secretReservationKey" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="ReservationNotFoundFault">
-		<xs:sequence>
-			<xs:element name="message" type="xs:string" minOccurs="0"/>
-		</xs:sequence>
-	</xs:complexType>
 	<xs:complexType name="getReservations">
 		<xs:sequence>
 			<xs:element name="from" type="xs:dateTime"/>
@@ -125,6 +120,5 @@
 	<xs:element name="AuthorizationFault" type="AuthorizationFault"/>
 	<xs:element name="RSFault" type="RSFault"/>
 	<xs:element name="ReservationConflictFault" type="ReservationConflictFault"/>
-	<xs:element name="ReservationNotFoundFault" type="ReservationNotFoundFault"/>
 
 </xs:schema>

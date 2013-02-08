@@ -23,11 +23,13 @@
 
 package eu.wisebed.api.v3;
 
+import eu.wisebed.api.v3.common.*;
 import eu.wisebed.api.v3.controller.Controller;
 import eu.wisebed.api.v3.controller.ControllerService;
 import eu.wisebed.api.v3.rs.RS;
 import eu.wisebed.api.v3.rs.RSService;
 import eu.wisebed.api.v3.sm.*;
+import eu.wisebed.api.v3.sm.UnknownSecretReservationKeyFault;
 import eu.wisebed.api.v3.snaa.SNAA;
 import eu.wisebed.api.v3.snaa.SNAAService;
 import eu.wisebed.api.v3.wsn.WSN;
@@ -296,14 +298,30 @@ public class WisebedServiceHelper {
 		return new ExperimentNotRunningFault_Exception(msg, exception, e);
 	}
 
-	public static UnknownReservationIdFault_Exception createUnknownReservationIdException(String msg,
-																						  String reservationId,
-																						  Exception e) {
+	public static eu.wisebed.api.v3.rs.UnknownSecretReservationKeyFault createRSUnknownSecretReservationKeyFault(String msg,
+																							SecretReservationKey srk) {
+		return new eu.wisebed.api.v3.rs.UnknownSecretReservationKeyFault(msg, createUnknownSecretReservationKeyFaultInfo(msg, srk));
+	}
 
-		UnknownReservationIdFault exception = new UnknownReservationIdFault();
-		exception.setMessage(msg);
-		exception.setReservationId(reservationId);
-		return new UnknownReservationIdFault_Exception(msg, exception, e);
+	public static UnknownSecretReservationKeyFault createSMUnknownSecretReservationKeyFault(String msg,
+																							SecretReservationKey srk) {
+		return new UnknownSecretReservationKeyFault(msg, createUnknownSecretReservationKeyFaultInfo(msg, srk));
+	}
+
+	public static UnknownSecretReservationKeyFault createSMUnknownSecretReservationKeyFault(String msg,
+																							SecretReservationKey srk,
+																							Exception e) {
+		return new UnknownSecretReservationKeyFault(msg, createUnknownSecretReservationKeyFaultInfo(msg, srk), e);
+	}
+
+	public static eu.wisebed.api.v3.common.UnknownSecretReservationKeyFault createUnknownSecretReservationKeyFaultInfo(
+			final String msg,
+			final SecretReservationKey srk) {
+		final eu.wisebed.api.v3.common.UnknownSecretReservationKeyFault faultInfo =
+				new eu.wisebed.api.v3.common.UnknownSecretReservationKeyFault();
+		faultInfo.setMessage(msg);
+		faultInfo.setSecretReservationKey(srk);
+		return faultInfo;
 	}
 
 	private static File copyToTmpFile(InputStream in, String prefix, String suffix) throws IOException {
