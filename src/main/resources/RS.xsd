@@ -37,9 +37,9 @@
 
 	<xs:complexType name="ConfidentialReservationDataKey">
 		<xs:sequence>
-			<xs:element name="urnPrefix" type="common:NodeUrnPrefix" />
 			<xs:element name="username" type="xs:string" />
-			<xs:element name="secretReservationKey" type="xs:string" />
+			<xs:element name="urnPrefix" type="common:NodeUrnPrefix" />
+			<xs:element name="key" type="xs:string" />
 		</xs:sequence>
 	</xs:complexType>
 

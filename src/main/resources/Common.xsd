@@ -44,14 +44,14 @@
 	<xs:complexType name="secretAuthenticationKey">
 		<xs:sequence>
 			<xs:element name="username" type="xs:string"/>
-			<xs:element name="secretAuthenticationKey" type="xs:string"/>
+			<xs:element name="key" type="xs:string"/>
 			<xs:element name="urnPrefix" type="NodeUrnPrefix"/>
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="secretReservationKey">
 		<xs:sequence>
-			<xs:element name="secretReservationKey" type="xs:long"/>
+			<xs:element name="key" type="xs:string"/>
 			<xs:element name="urnPrefix" type="NodeUrnPrefix"/>
 		</xs:sequence>
 	</xs:complexType>
