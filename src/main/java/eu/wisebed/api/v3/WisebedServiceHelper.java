@@ -23,15 +23,18 @@
 
 package eu.wisebed.api.v3;
 
-import eu.wisebed.api.v3.common.*;
+import eu.wisebed.api.v3.common.SecretReservationKey;
 import eu.wisebed.api.v3.controller.Controller;
 import eu.wisebed.api.v3.controller.ControllerService;
 import eu.wisebed.api.v3.rs.RS;
 import eu.wisebed.api.v3.rs.RSService;
-import eu.wisebed.api.v3.sm.*;
+import eu.wisebed.api.v3.sm.SessionManagement;
+import eu.wisebed.api.v3.sm.SessionManagementService;
 import eu.wisebed.api.v3.sm.UnknownSecretReservationKeyFault;
 import eu.wisebed.api.v3.snaa.SNAA;
 import eu.wisebed.api.v3.snaa.SNAAService;
+import eu.wisebed.api.v3.wsn.ReservationNotRunningFault;
+import eu.wisebed.api.v3.wsn.ReservationNotRunningFault_Exception;
 import eu.wisebed.api.v3.wsn.WSN;
 import eu.wisebed.api.v3.wsn.WSNService;
 
@@ -291,16 +294,19 @@ public class WisebedServiceHelper {
 		return wsnPort;
 	}
 
-	public static ExperimentNotRunningFault_Exception createExperimentNotRunningException(String msg,
-																						  Exception e) {
-		ExperimentNotRunningFault exception = new ExperimentNotRunningFault();
+	public static ReservationNotRunningFault_Exception createReservationNotRunningException(String msg,
+																							Exception e) {
+		ReservationNotRunningFault exception = new ReservationNotRunningFault();
 		exception.setMessage(msg);
-		return new ExperimentNotRunningFault_Exception(msg, exception, e);
+		return new ReservationNotRunningFault_Exception(msg, exception, e);
 	}
 
-	public static eu.wisebed.api.v3.rs.UnknownSecretReservationKeyFault createRSUnknownSecretReservationKeyFault(String msg,
-																							SecretReservationKey srk) {
-		return new eu.wisebed.api.v3.rs.UnknownSecretReservationKeyFault(msg, createUnknownSecretReservationKeyFaultInfo(msg, srk));
+	public static eu.wisebed.api.v3.rs.UnknownSecretReservationKeyFault createRSUnknownSecretReservationKeyFault(
+			String msg,
+			SecretReservationKey srk) {
+		return new eu.wisebed.api.v3.rs.UnknownSecretReservationKeyFault(msg,
+				createUnknownSecretReservationKeyFaultInfo(msg, srk)
+		);
 	}
 
 	public static UnknownSecretReservationKeyFault createSMUnknownSecretReservationKeyFault(String msg,
