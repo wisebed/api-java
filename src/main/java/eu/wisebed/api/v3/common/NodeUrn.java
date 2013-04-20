@@ -12,23 +12,11 @@ public class NodeUrn implements Serializable {
 
 	private String nodeUrn;
 
+	public NodeUrn() {
+	}
+
 	public NodeUrn(final String nodeUrn) {
-
-		if (nodeUrn == null) {
-			throw new NullPointerException("Parameter nodeUrn is null");
-		}
-
-		if (!URN_PATTERN.matcher(nodeUrn).matches()) {
-			throw new IllegalArgumentException("Parameter nodeUrn (\"" + nodeUrn + "\") is not a valid URN");
-		}
-
-		if (!hasHexOrDecLongUrnSuffix(nodeUrn)) {
-			throw new IllegalArgumentException(
-					"Parameter nodeUrn (\"" + nodeUrn + "\") must have a decimal or hexadecimal suffix"
-			);
-		}
-
-		this.nodeUrn = nodeUrn.toLowerCase();
+		setNodeUrn(nodeUrn);
 	}
 
 	@Override
@@ -50,6 +38,29 @@ public class NodeUrn implements Serializable {
 	@Override
 	public int hashCode() {
 		return nodeUrn.hashCode();
+	}
+
+	public void setNodeUrn(final String nodeUrn) {
+
+		if (nodeUrn == null) {
+			throw new NullPointerException("Parameter nodeUrn is null");
+		}
+
+		if (!URN_PATTERN.matcher(nodeUrn).matches()) {
+			throw new IllegalArgumentException("Parameter nodeUrn (\"" + nodeUrn + "\") is not a valid URN");
+		}
+
+		if (!hasHexOrDecLongUrnSuffix(nodeUrn)) {
+			throw new IllegalArgumentException(
+					"Parameter nodeUrn (\"" + nodeUrn + "\") must have a decimal or hexadecimal suffix"
+			);
+		}
+
+		this.nodeUrn = nodeUrn.toLowerCase();
+	}
+
+	public String getNodeUrn() {
+		return nodeUrn;
 	}
 
 	@Override

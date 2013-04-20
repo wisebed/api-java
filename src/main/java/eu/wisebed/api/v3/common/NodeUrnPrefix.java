@@ -12,17 +12,11 @@ public class NodeUrnPrefix implements Serializable {
 
 	private String nodeUrnPrefix;
 
+	public NodeUrnPrefix() {
+	}
+
 	public NodeUrnPrefix(final String nodeUrnPrefix) {
-
-		if (nodeUrnPrefix == null) {
-			throw new NullPointerException("Parameter nodeUrnPrefix is null");
-		}
-
-		if (!URN_PREFIX_PATTERN.matcher(nodeUrnPrefix).matches()) {
-			throw new IllegalArgumentException("Parameter nodeUrnPrefix is not a valid URN prefix");
-		}
-
-		this.nodeUrnPrefix = nodeUrnPrefix;
+		setNodeUrnPrefix(nodeUrnPrefix);
 	}
 
 	@Override
@@ -44,6 +38,23 @@ public class NodeUrnPrefix implements Serializable {
 	@Override
 	public int hashCode() {
 		return nodeUrnPrefix.hashCode();
+	}
+
+	public void setNodeUrnPrefix(final String nodeUrnPrefix) {
+
+		if (nodeUrnPrefix == null) {
+			throw new NullPointerException("Parameter nodeUrnPrefix is null");
+		}
+
+		if (!URN_PREFIX_PATTERN.matcher(nodeUrnPrefix).matches()) {
+			throw new IllegalArgumentException("Parameter nodeUrnPrefix is not a valid URN prefix");
+		}
+
+		this.nodeUrnPrefix = nodeUrnPrefix;
+	}
+
+	public String getNodeUrnPrefix() {
+		return nodeUrnPrefix;
 	}
 
 	@Override
