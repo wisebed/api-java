@@ -63,7 +63,7 @@ public class WisebedConversionHelper {
 	 * @param usernameUrnPrefixPairs
 	 * 		A collection of tuples of user name and urn prefix. The ladder one indicates the
 	 * 		user's associated testbed organization.
-	 * @param nodeURNs
+	 * @param nodeUrns
 	 * 		A collection of node urns
 	 *
 	 * @return A list of associations between tuples of user names and urn prefixes and node urns.
@@ -73,7 +73,7 @@ public class WisebedConversionHelper {
 	 */
 	public static List<UsernameNodeUrnsMap> convertToUsernameNodeUrnsMap(
 			final Collection<UsernameUrnPrefixPair> usernameUrnPrefixPairs,
-			final Collection<NodeUrn> nodeURNs) throws InvalidAttributesException {
+			final Collection<NodeUrn> nodeUrns) throws InvalidAttributesException {
 
 		/*
 		 * Check whether two tuples of user names and urn prefixes share an urn prefix
@@ -95,7 +95,7 @@ public class WisebedConversionHelper {
 			mappings.add(map);
 
 			map.setUsername(usernameUrnPrefixPair);
-			for (NodeUrn nodeUrn : nodeURNs) {
+			for (NodeUrn nodeUrn : nodeUrns) {
 				if (nodeUrn.belongsTo(usernameUrnPrefixPair.getUrnPrefix())) {
 					map.getNodeUrns().add(nodeUrn);
 				}
@@ -110,7 +110,7 @@ public class WisebedConversionHelper {
 	 *
 	 * @param secretAuthenticationKeys
 	 * 		A list of secret authentication keys
-	 * @param nodeURNs
+	 * @param nodeUrns
 	 * 		A collection of node urns
 	 *
 	 * @return A list of associations between tuples of user names and urn prefixes and node urns.
@@ -122,7 +122,7 @@ public class WisebedConversionHelper {
 	 */
 	public static List<UsernameNodeUrnsMap> convertToUsernameNodeUrnsMap(
 			final List<SecretAuthenticationKey> secretAuthenticationKeys,
-			final Collection<NodeUrn> nodeURNs) throws InvalidAttributesException {
-		return convertToUsernameNodeUrnsMap(convert(secretAuthenticationKeys), nodeURNs);
+			final Collection<NodeUrn> nodeUrns) throws InvalidAttributesException {
+		return convertToUsernameNodeUrnsMap(convert(secretAuthenticationKeys), nodeUrns);
 	}
 }
