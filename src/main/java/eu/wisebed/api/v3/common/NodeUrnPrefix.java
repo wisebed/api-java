@@ -47,7 +47,9 @@ public class NodeUrnPrefix implements Serializable {
 		}
 
 		if (!URN_PREFIX_PATTERN.matcher(nodeUrnPrefix).matches()) {
-			throw new IllegalArgumentException("Parameter nodeUrnPrefix is not a valid URN prefix");
+			throw new IllegalArgumentException(
+					"Parameter nodeUrnPrefix (\"" + nodeUrnPrefix + "\") is not a valid URN prefix"
+			);
 		}
 
 		this.nodeUrnPrefix = nodeUrnPrefix;
