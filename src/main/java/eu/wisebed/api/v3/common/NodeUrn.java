@@ -19,6 +19,10 @@ public class NodeUrn implements Serializable {
 		setNodeUrn(nodeUrn);
 	}
 
+	public NodeUrn(final NodeUrnPrefix nodeUrnPrefix, final String nodeUrnSuffix) {
+		this(nodeUrnPrefix + nodeUrnSuffix);
+	}
+
 	@Override
 	public boolean equals(final Object o) {
 
