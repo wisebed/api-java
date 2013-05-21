@@ -23,10 +23,7 @@
 
 package eu.wisebed.api.v3.util;
 
-import eu.wisebed.api.v3.common.NodeUrn;
-import eu.wisebed.api.v3.common.SecretAuthenticationKey;
-import eu.wisebed.api.v3.common.UsernameNodeUrnsMap;
-import eu.wisebed.api.v3.common.UsernameUrnPrefixPair;
+import eu.wisebed.api.v3.common.*;
 
 import javax.naming.directory.InvalidAttributesException;
 import java.util.*;
@@ -35,74 +32,6 @@ import java.util.*;
  * Small helper class to convert between two or more API types
  */
 public class WisebedConversionHelper {
-
-	/**
-	 * Converts a list of secret authentication keys to a list of tuples comprising user names and
-	 * urn prefixes and returns the result.
-	 *
-	 * @param secretAuthenticationKeys
-	 * 		A list of secret authentication keys
-	 *
-	 * @return A list of tuples comprising user names and urn prefixes
-	 */
-	public static List<UsernameUrnPrefixPair> convert(final List<SecretAuthenticationKey> secretAuthenticationKeys) {
-		List<UsernameUrnPrefixPair> usernamePrefixPairs = new LinkedList<UsernameUrnPrefixPair>();
-		for (SecretAuthenticationKey secretAuthenticationKey : secretAuthenticationKeys) {
-			UsernameUrnPrefixPair upp = new UsernameUrnPrefixPair();
-			usernamePrefixPairs.add(upp);
-			upp.setUsername(secretAuthenticationKey.getUsername());
-			upp.setUrnPrefix(secretAuthenticationKey.getUrnPrefix());
-		}
-		return usernamePrefixPairs;
-	}
-
-	/**
-	 * Relates user name prefix pairs to node urns based or the node urns' prefixes and returns the
-	 * result.
-	 *
-	 * @param usernameUrnPrefixPairs
-	 * 		A collection of tuples of user name and urn prefix. The ladder one indicates the
-	 * 		user's associated testbed organization.
-	 * @param nodeUrns
-	 * 		A collection of node urns
-	 *
-	 * @return A list of associations between tuples of user names and urn prefixes and node urns.
-	 *
-	 * @throws InvalidAttributesException
-	 * 		Thrown if two tuples of user names and urn prefixes share an urn prefix.
-	 */
-	public static List<UsernameNodeUrnsMap> convertToUsernameNodeUrnsMap(
-			final Collection<UsernameUrnPrefixPair> usernameUrnPrefixPairs,
-			final Collection<NodeUrn> nodeUrns) throws InvalidAttributesException {
-
-		/*
-		 * Check whether two tuples of user names and urn prefixes share an urn prefix
-		 */
-		Set<String> prefixes = new HashSet<String>();
-		for (UsernameUrnPrefixPair usernameUrnPrefixPair : usernameUrnPrefixPairs) {
-			if (!prefixes.add(usernameUrnPrefixPair.getUrnPrefix().toString())) {
-				throw new InvalidAttributesException("The node urn prefix '"
-						+ usernameUrnPrefixPair.getUrnPrefix()
-						+ "' is associated to multiple user names."
-				);
-			}
-		}
-
-		List<UsernameNodeUrnsMap> mappings = new LinkedList<UsernameNodeUrnsMap>();
-		for (UsernameUrnPrefixPair usernameUrnPrefixPair : usernameUrnPrefixPairs) {
-
-			UsernameNodeUrnsMap map = new UsernameNodeUrnsMap();
-			mappings.add(map);
-
-			map.setUsername(usernameUrnPrefixPair);
-			for (NodeUrn nodeUrn : nodeUrns) {
-				if (nodeUrn.belongsTo(usernameUrnPrefixPair.getUrnPrefix())) {
-					map.getNodeUrns().add(nodeUrn);
-				}
-			}
-		}
-		return mappings;
-	}
 
 	/**
 	 * Matches secret authentication keys to related node urns based or the node urns' prefixes and
@@ -117,12 +46,44 @@ public class WisebedConversionHelper {
 	 *
 	 * @throws InvalidAttributesException
 	 * 		Thrown if the matching cannot be performed due to ambiguous user data
-	 * @see WisebedConversionHelper#convert(List)
-	 * @see WisebedConversionHelper#convertToUsernameNodeUrnsMap(Collection, Collection)
 	 */
 	public static List<UsernameNodeUrnsMap> convertToUsernameNodeUrnsMap(
 			final List<SecretAuthenticationKey> secretAuthenticationKeys,
-			final Collection<NodeUrn> nodeUrns) throws InvalidAttributesException {
-		return convertToUsernameNodeUrnsMap(convert(secretAuthenticationKeys), nodeUrns);
+			final List<NodeUrn> nodeUrns) throws InvalidAttributesException {
+
+		/*
+		 * Check whether two tuples of user names and urn prefixes share an urn prefix
+		 */
+		final Set<NodeUrnPrefix> prefixes = new HashSet<NodeUrnPrefix>();
+
+		for (SecretAuthenticationKey secretAuthenticationKey : secretAuthenticationKeys) {
+			if (!prefixes.add(secretAuthenticationKey.getUrnPrefix())) {
+				throw new InvalidAttributesException("The node urn prefix '"
+						+ secretAuthenticationKey.getUrnPrefix()
+						+ "' is associated to multiple user names."
+				);
+			}
+		}
+
+		final List<UsernameNodeUrnsMap> mappings = new LinkedList<UsernameNodeUrnsMap>();
+
+		for (SecretAuthenticationKey secretAuthenticationKey : secretAuthenticationKeys) {
+
+			final NodeUrnPrefix urnPrefix = secretAuthenticationKey.getUrnPrefix();
+			final String username = secretAuthenticationKey.getUsername();
+
+			final UsernameNodeUrnsMap mapping = new UsernameNodeUrnsMap();
+			mapping.setUrnPrefix(urnPrefix);
+			mapping.setUsername(username);
+			mappings.add(mapping);
+
+			for (NodeUrn nodeUrn : nodeUrns) {
+				if (nodeUrn.belongsTo(urnPrefix)) {
+					mapping.getNodeUrns().add(nodeUrn);
+				}
+			}
+		}
+
+		return mappings;
 	}
 }
