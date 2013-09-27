@@ -111,6 +111,11 @@
 						<artifactId>jaxb2-basics</artifactId>
 						<version>0.6.4</version>
 					</dependency>
+					<dependency>
+						<groupId>org.jvnet.jaxb2_commons</groupId>
+						<artifactId>jaxb2-fluent-api</artifactId>
+						<version>3.0</version>
+					</dependency>
 				</dependencies>
 				<executions>
 					<execution>
@@ -130,6 +135,7 @@
 								<xjcArg>-Xequals</xjcArg>
 								<xjcArg>-XhashCode</xjcArg>
 								<xjcArg>-XtoString</xjcArg>
+								<xjcArg>-Xfluent-api</xjcArg>
 							</xjcArgs>
 						</configuration>
 					</execution>
@@ -150,6 +156,7 @@
 								<xjcArg>-Xequals</xjcArg>
 								<xjcArg>-XhashCode</xjcArg>
 								<xjcArg>-XtoString</xjcArg>
+								<xjcArg>-Xfluent-api</xjcArg>
 							</xjcArgs>
 						</configuration>
 					</execution>
@@ -170,6 +177,7 @@
 								<xjcArg>-Xequals</xjcArg>
 								<xjcArg>-XhashCode</xjcArg>
 								<xjcArg>-XtoString</xjcArg>
+								<xjcArg>-Xfluent-api</xjcArg>
 							</xjcArgs>
 						</configuration>
 					</execution>
@@ -190,6 +198,7 @@
 								<xjcArg>-Xequals</xjcArg>
 								<xjcArg>-XhashCode</xjcArg>
 								<xjcArg>-XtoString</xjcArg>
+								<xjcArg>-Xfluent-api</xjcArg>
 							</xjcArgs>
 						</configuration>
 					</execution>
@@ -210,6 +219,7 @@
 								<xjcArg>-Xequals</xjcArg>
 								<xjcArg>-XhashCode</xjcArg>
 								<xjcArg>-XtoString</xjcArg>
+								<xjcArg>-Xfluent-api</xjcArg>
 							</xjcArgs>
 						</configuration>
 					</execution>
