@@ -30,13 +30,14 @@ public class NodeUrn implements Serializable {
 			return true;
 		}
 
-		if (o == null || getClass() != o.getClass()) {
+		if (!(o instanceof NodeUrn)) {
 			return false;
 		}
 
-		final NodeUrn other = (NodeUrn) o;
+		final NodeUrn nodeUrn1 = (NodeUrn) o;
 
-		return this.nodeUrn.equals(other.nodeUrn);
+		return nodeUrn.equals(nodeUrn1.nodeUrn);
+
 	}
 
 	@Override
