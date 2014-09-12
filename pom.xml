@@ -74,6 +74,9 @@
 						<goals>
 							<goal>jar</goal>
 						</goals>
+						<configuration>
+							<additionalparam>-Xdoclint:none</additionalparam>
+						</configuration>
 					</execution>
 				</executions>
 				<!-- Doclava is throwing an IllegalArgumentException because it can't find the joda annotations
