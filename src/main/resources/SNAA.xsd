@@ -98,7 +98,7 @@
 			<xs:enumeration value="RS_GET_CONFIDENTIAL_RESERVATIONS" />
 			<xs:enumeration value="RS_GET_RESERVATIONS" />
 			<xs:enumeration value="RS_GET_RESERVATION" />
-			<xs:enumeration value="RS_DELETE_RESERVATION" />
+			<xs:enumeration value="RS_CANCEL_RESERVATION" />
 			<xs:enumeration value="RS_MAKE_RESERVATION" />
 
 			<!-- Operations on SM service -->
