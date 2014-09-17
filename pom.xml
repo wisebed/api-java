@@ -29,6 +29,27 @@
 		</dependency>
 	</dependencies>
 
+	<profiles>
+		<profile>
+			<id>pre-JDK 8+</id>
+			<activation>
+				<jdk>[,1.8)</jdk>
+			</activation>
+			<properties>
+				<javadoc.additionalparam> </javadoc.additionalparam>
+			</properties>
+		</profile>
+		<profile>
+			<id>JDK 8+</id>
+			<activation>
+				<jdk>[1.8,)</jdk>
+			</activation>
+			<properties>
+				<javadoc.additionalparam>-Xdoclint:none</javadoc.additionalparam>
+			</properties>
+		</profile>
+	</profiles>
+
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -75,7 +96,7 @@
 							<goal>jar</goal>
 						</goals>
 						<configuration>
-							<additionalparam>-Xdoclint:none</additionalparam>
+							<additionalparam>${javadoc.additionalparam}</additionalparam>
 						</configuration>
 					</execution>
 				</executions>
