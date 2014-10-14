@@ -31,7 +31,7 @@
 
 	<profiles>
 		<profile>
-			<id>pre-JDK 8+</id>
+			<id>pre-JDK8</id>
 			<activation>
 				<jdk>[,1.8)</jdk>
 			</activation>
@@ -40,7 +40,7 @@
 			</properties>
 		</profile>
 		<profile>
-			<id>JDK 8+</id>
+			<id>post-JDK8</id>
 			<activation>
 				<jdk>[1.8,)</jdk>
 			</activation>
@@ -79,7 +79,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.0.2</version>
+				<version>3.2</version>
 				<configuration>
 					<source>1.6</source>
 					<target>1.6</target>
