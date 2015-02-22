@@ -6,14 +6,14 @@
 	<groupId>eu.wisebed</groupId>
 	<artifactId>api</artifactId>
 	<packaging>jar</packaging>
-	<version>3.1-SNAPSHOT</version>
+	<version>3.0.1-SNAPSHOT</version>
 	<name>WISEBED API</name>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.jvnet.jaxb2_commons</groupId>
 			<artifactId>jaxb2-basics-runtime</artifactId>
-			<version>0.6.4</version>
+			<version>0.9.3</version>
 		</dependency>
 		<dependency>
 			<groupId>joda-time</groupId>
@@ -67,11 +67,14 @@
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>2.8</version>
 				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-javadoc-plugin</artifactId>
-					<version>2.8.1</version>
-				</plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>2.10.1</version>
+                    <configuration>
+                        <additionalparam>${javadoc.additionalparam}</additionalparam>
+                    </configuration>
+                </plugin>
 			</plugins>
 		</pluginManagement>
 		<plugins>
@@ -104,30 +107,6 @@
 						</configuration>
 					</execution>
 				</executions>
-				<!-- Doclava is throwing an IllegalArgumentException because it can't find the joda annotations
-				<configuration>
-					<docletArtifact>
-						<groupId>com.google.doclava</groupId>
-						<artifactId>doclava</artifactId>
-						<version>1.0.5</version>
-					</docletArtifact>
-					<doclet>com.google.doclava.Doclava</doclet>
-					<bootclasspath>${sun.boot.class.path}</bootclasspath>
-					<additionalparam>
-						-hdf project.name "${project.name}"
-						-d ${project.build.directory}/apidocs
-					</additionalparam>
-					<useStandardDocletOptions>false</useStandardDocletOptions>
-					<additionalJOption>-J-Xmx1024m</additionalJOption>
-					<additionnalDependencies>
-						<additionnalDependency>
-							<groupId>joda-time</groupId>
-							<artifactId>joda-time</artifactId>
-							<version>2.0</version>
-						</additionnalDependency>
-					</additionnalDependencies>
-				</configuration>
-				-->
 			</plugin>
 			<plugin>
 				<groupId>org.jvnet.jax-ws-commons</groupId>
@@ -137,7 +116,7 @@
 					<dependency>
 						<groupId>org.jvnet.jaxb2_commons</groupId>
 						<artifactId>jaxb2-basics</artifactId>
-						<version>0.6.4</version>
+						<version>0.9.3</version>
 					</dependency>
 					<dependency>
 						<groupId>org.jvnet.jaxb2_commons</groupId>
@@ -298,7 +277,6 @@
 
 	<scm>
 		<connection>scm:git:git@github.com:wisebed/api-java.git</connection>
-	  <tag>HEAD</tag>
   </scm>
 
 </project>
