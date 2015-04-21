@@ -6,7 +6,7 @@
 	<groupId>eu.wisebed</groupId>
 	<artifactId>api</artifactId>
 	<packaging>jar</packaging>
-	<version>3.0.1-SNAPSHOT</version>
+	<version>3.0.1</version>
 	<name>WISEBED API</name>
 
 	<dependencies>
@@ -277,6 +277,7 @@
 
 	<scm>
 		<connection>scm:git:git@github.com:wisebed/api-java.git</connection>
+    <tag>v3.0.1</tag>
   </scm>
 
 </project>
